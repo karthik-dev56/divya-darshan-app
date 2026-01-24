@@ -24,19 +24,19 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[120vh] flex items-start justify-center overflow-hidden pt-32">
-      {/* Background Image with Overlay - Extended */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2070&auto=format&fit=crop')`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-temple-dark" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex-1 flex flex-col justify-center">
         {/* Headline */}
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
@@ -85,21 +85,22 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Scroll Down Indicator */}
-        <motion.button
-          onClick={scrollToTemples}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ 
-            opacity: { duration: 0.5, delay: 1 },
-            y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-          }}
-          className="mt-20 text-white/70 hover:text-white transition-colors duration-300 flex flex-col items-center gap-2"
-        >
-          <span className="text-sm uppercase tracking-wider">Explore Temples</span>
-          <ChevronDown className="w-6 h-6" />
-        </motion.button>
       </div>
+
+      {/* Scroll Down Indicator - Centered at Bottom */}
+      <motion.button
+        onClick={scrollToTemples}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{ 
+          opacity: { duration: 0.5, delay: 1 },
+          y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+        }}
+        className="relative z-10 mb-12 text-white/70 hover:text-white transition-colors duration-300 flex flex-col items-center gap-2"
+      >
+        <span className="text-sm uppercase tracking-wider">Explore Temples</span>
+        <ChevronDown className="w-6 h-6" />
+      </motion.button>
     </section>
   );
 };
