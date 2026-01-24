@@ -1,5 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 
+// Import temple images
+import deekshabhoomiImg from "@/assets/temples/deekshabhoomi.jpg";
+import tekdiGaneshImg from "@/assets/temples/tekdi-ganesh.jpg";
+import ramtekRamMandirImg from "@/assets/temples/ramtek-ram-mandir.jpg";
+import koradiMataImg from "@/assets/temples/koradi-mata.jpg";
+import siddhivinayakImg from "@/assets/temples/siddhivinayak.jpg";
+import shirdiSaiBabaImg from "@/assets/temples/shirdi-sai-baba.jpg";
+import trimbakeshwarImg from "@/assets/temples/trimbakeshwar.jpg";
+import mahalaxmiKolhapurImg from "@/assets/temples/mahalaxmi-kolhapur.jpg";
+import meenakshiMaduraiImg from "@/assets/temples/meenakshi-madurai.jpg";
+import brihadeeswaraImg from "@/assets/temples/brihadeeswarar.jpg";
+import rameswaramImg from "@/assets/temples/rameswaram.jpg";
+import kapaleeshwararImg from "@/assets/temples/kapaleeshwarar.jpg";
+
 interface Temple {
   name: string;
   location: string;
@@ -17,28 +31,28 @@ const templesData: RegionTemples[] = [
   {
     region: "Nagpur",
     temples: [
-      { name: "Deekshabhoomi", location: "Nagpur", openTime: "6:00 AM", closeTime: "9:00 PM", image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=300&fit=crop" },
-      { name: "Ganesh Temple", location: "Tekdi", openTime: "5:30 AM", closeTime: "10:00 PM", image: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=400&h=300&fit=crop" },
-      { name: "Ram Mandir", location: "Ramtek", openTime: "6:00 AM", closeTime: "8:00 PM", image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop" },
-      { name: "Koradi Mata Temple", location: "Koradi", openTime: "5:00 AM", closeTime: "9:30 PM", image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=400&h=300&fit=crop" },
+      { name: "Deekshabhoomi", location: "Nagpur", openTime: "6:00 AM", closeTime: "9:00 PM", image: deekshabhoomiImg },
+      { name: "Ganesh Temple", location: "Tekdi", openTime: "5:30 AM", closeTime: "10:00 PM", image: tekdiGaneshImg },
+      { name: "Ram Mandir", location: "Ramtek", openTime: "6:00 AM", closeTime: "8:00 PM", image: ramtekRamMandirImg },
+      { name: "Koradi Mata Temple", location: "Koradi", openTime: "5:00 AM", closeTime: "9:30 PM", image: koradiMataImg },
     ],
   },
   {
     region: "Maharashtra",
     temples: [
-      { name: "Siddhivinayak Temple", location: "Mumbai", openTime: "5:30 AM", closeTime: "10:00 PM", image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=400&h=300&fit=crop" },
-      { name: "Shirdi Sai Baba", location: "Shirdi", openTime: "4:00 AM", closeTime: "11:00 PM", image: "https://images.unsplash.com/photo-1604928141064-207cea6f571f?w=400&h=300&fit=crop" },
-      { name: "Trimbakeshwar", location: "Nashik", openTime: "5:30 AM", closeTime: "9:00 PM", image: "https://images.unsplash.com/photo-1600100397608-e1dd8a48b1c8?w=400&h=300&fit=crop" },
-      { name: "Mahalaxmi Temple", location: "Kolhapur", openTime: "4:00 AM", closeTime: "10:00 PM", image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=400&h=300&fit=crop" },
+      { name: "Siddhivinayak Temple", location: "Mumbai", openTime: "5:30 AM", closeTime: "10:00 PM", image: siddhivinayakImg },
+      { name: "Shirdi Sai Baba", location: "Shirdi", openTime: "4:00 AM", closeTime: "11:00 PM", image: shirdiSaiBabaImg },
+      { name: "Trimbakeshwar", location: "Nashik", openTime: "5:30 AM", closeTime: "9:00 PM", image: trimbakeshwarImg },
+      { name: "Mahalaxmi Temple", location: "Kolhapur", openTime: "4:00 AM", closeTime: "10:00 PM", image: mahalaxmiKolhapurImg },
     ],
   },
   {
     region: "Tamil Nadu",
     temples: [
-      { name: "Meenakshi Temple", location: "Madurai", openTime: "5:00 AM", closeTime: "10:00 PM", image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=400&h=300&fit=crop" },
-      { name: "Brihadeeswarar", location: "Thanjavur", openTime: "6:00 AM", closeTime: "8:30 PM", image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=400&h=300&fit=crop" },
-      { name: "Rameswaram Temple", location: "Rameswaram", openTime: "5:00 AM", closeTime: "9:00 PM", image: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=400&h=300&fit=crop" },
-      { name: "Kapaleeshwarar", location: "Chennai", openTime: "5:30 AM", closeTime: "12:00 PM", image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop" },
+      { name: "Meenakshi Temple", location: "Madurai", openTime: "5:00 AM", closeTime: "10:00 PM", image: meenakshiMaduraiImg },
+      { name: "Brihadeeswarar", location: "Thanjavur", openTime: "6:00 AM", closeTime: "8:30 PM", image: brihadeeswaraImg },
+      { name: "Rameswaram Temple", location: "Rameswaram", openTime: "5:00 AM", closeTime: "9:00 PM", image: rameswaramImg },
+      { name: "Kapaleeshwarar", location: "Chennai", openTime: "5:30 AM", closeTime: "12:00 PM", image: kapaleeshwararImg },
     ],
   },
 ];
@@ -46,22 +60,22 @@ const templesData: RegionTemples[] = [
 const TempleCard = ({ temple, index }: { temple: Temple; index: number }) => {
   return (
     <Card 
-      className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in bg-card"
+      className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in bg-card cursor-pointer"
       style={{ animationDelay: `${index * 150}ms` }}
     >
-      <div className="relative overflow-hidden h-48">
+      <div className="relative overflow-hidden h-52">
         <img
           src={temple.image}
           alt={temple.name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="absolute bottom-3 left-3 right-3">
-          <h3 className="font-serif text-white text-lg font-semibold">{temple.name}</h3>
-          <p className="text-white/80 text-sm">{temple.location}</p>
+          <h3 className="font-serif text-white text-lg font-semibold drop-shadow-lg">{temple.name}</h3>
+          <p className="text-white/90 text-sm drop-shadow">{temple.location}</p>
         </div>
       </div>
-      <CardContent className="p-4">
+      <CardContent className="p-4 bg-gradient-to-b from-card to-secondary/30">
         <div className="flex items-center justify-between text-sm">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -79,7 +93,7 @@ const TempleCard = ({ temple, index }: { temple: Temple; index: number }) => {
 
 const FamousTemples = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-20 px-4 bg-gradient-to-b from-background via-secondary/20 to-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
@@ -100,7 +114,6 @@ const FamousTemples = () => {
               <h3 className="font-serif text-2xl md:text-3xl text-foreground px-4">
                 {region.region}
               </h3>
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-temple-saffron to-transparent" />
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-temple-saffron to-transparent" />
             </div>
             
