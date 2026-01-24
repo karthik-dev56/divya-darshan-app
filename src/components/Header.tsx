@@ -1,4 +1,82 @@
 import { motion } from "framer-motion";
+import { useAuth } from "@/hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+
+const AuthButtons = () => {
+  const { user, signOut, loading } = useAuth();
+  const navigate = useNavigate();
+
+  if (loading) {
+    return (
+      <motion.div 
+        className="flex items-center gap-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+      >
+        <div className="w-20 h-8 bg-white/20 rounded animate-pulse"></div>
+      </motion.div>
+    );
+  }
+
+  if (user) {
+    return (
+      <motion.div 
+        className="flex items-center gap-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+      >
+        <span className="text-white/90 text-sm hidden sm:block">
+          {user.email?.split('@')[0]}
+        </span>
+        <motion.button
+          onClick={() => signOut()}
+          className="bg-temple-gold text-temple-dark font-semibold px-5 py-2 rounded-md shadow-lg"
+          whileHover={{ 
+            scale: 1.05, 
+            y: -2,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.3)"
+          }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ duration: 0.2 }}
+        >
+          Sign Out
+        </motion.button>
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div 
+      className="flex items-center gap-4"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+    >
+      <motion.button
+        onClick={() => navigate('/auth')}
+        className="text-white/90 hover:text-white font-medium transition-colors duration-300 bg-transparent border-none cursor-pointer"
+        whileHover={{ scale: 1.05 }}
+      >
+        Login
+      </motion.button>
+      <motion.button
+        onClick={() => navigate('/auth')}
+        className="bg-temple-gold text-temple-dark font-semibold px-5 py-2 rounded-md shadow-lg"
+        whileHover={{ 
+          scale: 1.05, 
+          y: -2,
+          boxShadow: "0 10px 20px rgba(0,0,0,0.3)"
+        }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+      >
+        Sign Up
+      </motion.button>
+    </motion.div>
+  );
+};
 
 const regions = [
   { name: "Nagpur", sectionId: "nagpur" },
@@ -68,33 +146,7 @@ const Header = () => {
         </nav>
 
         {/* Authentication with Animation */}
-        <motion.div 
-          className="flex items-center gap-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-        >
-          <motion.a
-            href="/login"
-            className="text-white/90 hover:text-white font-medium transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-          >
-            Login
-          </motion.a>
-          <motion.a
-            href="/signup"
-            className="bg-temple-gold text-temple-dark font-semibold px-5 py-2 rounded-md shadow-lg"
-            whileHover={{ 
-              scale: 1.05, 
-              y: -2,
-              boxShadow: "0 10px 20px rgba(0,0,0,0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          >
-            Sign Up
-          </motion.a>
-        </motion.div>
+        <AuthButtons />
       </div>
     </header>
   );
