@@ -24,19 +24,19 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section className="relative min-h-[120vh] flex items-start justify-center overflow-hidden pt-32">
+      {/* Background Image with Overlay - Extended */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2070&auto=format&fit=crop')`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-temple-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-temple-dark" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Headline */}
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
@@ -75,9 +75,9 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, backgroundColor: "hsl(30, 100%, 50%)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-5 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-temple-saffron hover:border-temple-saffron hover:text-temple-dark font-medium transition-colors duration-300"
+                className="px-5 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:border-temple-saffron hover:text-temple-dark font-medium transition-colors duration-300"
               >
                 {temple.name}
               </motion.button>
@@ -94,15 +94,12 @@ const Hero = () => {
             opacity: { duration: 0.5, delay: 1 },
             y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="absolute bottom-32 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors duration-300 flex flex-col items-center gap-2"
+          className="mt-20 text-white/70 hover:text-white transition-colors duration-300 flex flex-col items-center gap-2"
         >
           <span className="text-sm uppercase tracking-wider">Explore Temples</span>
           <ChevronDown className="w-6 h-6" />
         </motion.button>
       </div>
-
-      {/* Smooth transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-temple-dark via-temple-dark/80 to-transparent" />
     </section>
   );
 };
