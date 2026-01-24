@@ -1,13 +1,27 @@
+import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 
 const Footer = () => {
   const regions = ["Nagpur", "Tamil Nadu", "Maharashtra", "Karnataka", "Gujarat"];
   const quickLinks = ["About Us", "Contact", "Privacy Policy", "Terms of Service"];
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <footer className="bg-temple-dark text-white">
+    <footer className="bg-temple-dark border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+        >
           {/* Logo & Description */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
@@ -22,13 +36,13 @@ const Footer = () => {
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-temple-saffron transition-colors duration-300">
-                <span className="text-sm">f</span>
+                <span className="text-sm text-white">f</span>
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-temple-saffron transition-colors duration-300">
-                <span className="text-sm">𝕏</span>
+                <span className="text-sm text-white">𝕏</span>
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-temple-saffron transition-colors duration-300">
-                <span className="text-sm">in</span>
+                <span className="text-sm text-white">in</span>
               </a>
             </div>
           </div>
@@ -41,12 +55,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {regions.map((region) => (
                 <li key={region}>
-                  <a 
-                    href="#" 
-                    className="text-white/70 hover:text-temple-saffron transition-colors duration-300 text-sm"
+                  <button 
+                    onClick={() => scrollToSection(region.toLowerCase().replace(" ", "-"))}
+                    className="text-white/70 hover:text-temple-saffron transition-colors duration-300 text-sm bg-transparent border-none cursor-pointer"
                   >
                     {region}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -82,7 +96,7 @@ const Footer = () => {
               <li>📍 Mumbai, Maharashtra, India</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8">
