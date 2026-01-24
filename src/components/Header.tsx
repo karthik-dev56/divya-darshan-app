@@ -27,9 +27,13 @@ const AuthButtons = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
       >
-        <span className="text-white/90 text-sm hidden sm:block">
-          {user.email?.split('@')[0]}
-        </span>
+        <motion.button
+          onClick={() => navigate('/dashboard')}
+          className="text-white/90 hover:text-white font-medium transition-colors duration-300 bg-transparent border-none cursor-pointer"
+          whileHover={{ scale: 1.05 }}
+        >
+          Dashboard
+        </motion.button>
         <motion.button
           onClick={() => signOut()}
           className="bg-temple-gold text-temple-dark font-semibold px-5 py-2 rounded-md shadow-lg"
