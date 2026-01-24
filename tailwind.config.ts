@@ -61,13 +61,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        temple: {
-          red: "hsl(var(--temple-red))",
-          saffron: "hsl(var(--temple-saffron))",
-          gold: "hsl(var(--temple-gold))",
-          dark: "hsl(var(--temple-dark))",
-          cream: "hsl(var(--temple-cream))",
-        },
+        "temple-red": "hsl(var(--temple-red))",
+        "temple-saffron": "hsl(var(--temple-saffron))",
+        "temple-gold": "hsl(var(--temple-gold))",
+        "temple-dark": "hsl(var(--temple-dark))",
+        "temple-cream": "hsl(var(--temple-cream))",
       },
       borderRadius: {
         lg: "var(--radius)",
