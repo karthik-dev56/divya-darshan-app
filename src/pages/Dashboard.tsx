@@ -62,32 +62,64 @@ const Dashboard = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-temple-dark">
+    <div className="min-h-screen bg-temple-dark overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          className="absolute -top-40 -right-40 w-96 h-96 bg-temple-gold/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute -bottom-40 -left-40 w-96 h-96 bg-temple-saffron/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-temple-dark/95 backdrop-blur-md border-b border-white/10">
+      <motion.header 
+        className="sticky top-0 z-50 bg-temple-dark/95 backdrop-blur-md border-b border-white/10"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo */}
           <motion.a
             href="/"
             className="flex items-center gap-2 group"
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <svg
+            <motion.svg
               className="w-8 h-8 text-temple-gold"
               viewBox="0 0 24 24"
               fill="currentColor"
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <path d="M12 2L8 6H4L3 8V10L2 12V22H22V12L21 10V8L20 6H16L12 2ZM12 4.5L14.5 7H9.5L12 4.5ZM5 9H19V10H5V9ZM4 12H20V20H4V12ZM6 14V18H8V14H6ZM10 14V18H14V14H10ZM16 14V18H18V14H16Z" />
-            </svg>
-            <span className="font-serif text-xl font-bold text-temple-gold">
+            </motion.svg>
+            <motion.span 
+              className="font-serif text-xl font-bold text-temple-gold"
+              whileHover={{ letterSpacing: "0.02em" }}
+              transition={{ duration: 0.2 }}
+            >
               Divya Darshan
-            </span>
+            </motion.span>
           </motion.a>
 
           {/* User Menu */}
           <UserMenu />
         </div>
-      </header>
+      </motion.header>
 
       {/* Region Tabs */}
       <RegionTabs
@@ -97,34 +129,58 @@ const Dashboard = () => {
       />
 
       {/* Content Area */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8 relative">
         {/* Region Title */}
         <motion.div
           key={activeRegion}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="mb-8"
         >
-          <h1 className="font-serif text-3xl md:text-4xl text-white">
+          <motion.h1 
+            className="font-serif text-3xl md:text-4xl text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             Temples in{" "}
-            <span className="text-temple-saffron">
+            <motion.span 
+              className="text-temple-saffron inline-block"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              key={activeRegion + "-name"}
+            >
               {regions.find((r) => r.id === activeRegion)?.name}
-            </span>
-          </h1>
-          <p className="text-white/60 mt-2">
+            </motion.span>
+          </motion.h1>
+          <motion.p 
+            className="text-white/60 mt-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+          >
             Discover sacred destinations and plan your spiritual journey
-          </p>
+          </motion.p>
+          
+          {/* Decorative line */}
+          <motion.div 
+            className="h-0.5 bg-gradient-to-r from-temple-gold via-temple-saffron to-transparent mt-4 rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: "200px" }}
+            transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
+          />
         </motion.div>
 
         {/* Temple Cards Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeRegion}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {temples.map((temple, index) => (
@@ -149,11 +205,16 @@ const Dashboard = () => {
 
         {/* Empty State */}
         {temples.length === 0 && (
-          <div className="text-center py-20">
+          <motion.div 
+            className="text-center py-20"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+          >
             <p className="text-white/60 text-lg">
               No temples found for this region
             </p>
-          </div>
+          </motion.div>
         )}
       </main>
     </div>
