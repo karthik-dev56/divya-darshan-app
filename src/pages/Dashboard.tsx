@@ -4,16 +4,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
 import UserMenu from "@/components/UserMenu";
 import RegionTabs from "@/components/dashboard/RegionTabs";
-import TempleCard from "@/components/dashboard/TempleCard";
-import { regions, getTemplesByRegion, isTempleOpen } from "@/data/templesData";
+import HeritageSiteCard from "@/components/dashboard/HeritageSiteCard";
+import { regions, getSitesByRegion, isSiteOpen } from "@/data/heritageSitesData";
 import { useToast } from "@/hooks/use-toast";
+import { Building2, Landmark, Filter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+type FilterType = "all" | "temple" | "fort";
 
 const Dashboard = () => {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
   const [activeRegion, setActiveRegion] = useState("nagpur");
-  const [savedTemples, setSavedTemples] = useState<Set<string>>(new Set());
+  const [savedSites, setSavedSites] = useState<Set<string>>(new Set());
+  const [filter, setFilter] = useState<FilterType>("all");
 
   // Redirect to auth if not logged in
   useEffect(() => {
@@ -22,34 +27,33 @@ const Dashboard = () => {
     }
   }, [user, loading, navigate]);
 
-  const handleSaveTemple = (templeId: string) => {
-    setSavedTemples((prev) => {
+  const handleSaveSite = (siteId: string) => {
+    setSavedSites((prev) => {
       const newSet = new Set(prev);
-      if (newSet.has(templeId)) {
-        newSet.delete(templeId);
+      if (newSet.has(siteId)) {
+        newSet.delete(siteId);
         toast({
           title: "Removed from saved",
-          description: "Temple removed from your saved list",
+          description: "Site removed from your saved list",
         });
       } else {
-        newSet.add(templeId);
+        newSet.add(siteId);
         toast({
           title: "Saved!",
-          description: "Temple added to your saved list",
+          description: "Site added to your saved list",
         });
       }
       return newSet;
     });
   };
 
-  const handleViewDetails = (templeId: string) => {
-    toast({
-      title: "Coming Soon",
-      description: "Temple details page is under development",
-    });
-  };
+  const allSites = getSitesByRegion(activeRegion);
+  const sites = filter === "all" 
+    ? allSites 
+    : allSites.filter(site => site.type === filter);
 
-  const temples = getTemplesByRegion(activeRegion);
+  const templeCount = allSites.filter(s => s.type === "temple").length;
+  const fortCount = allSites.filter(s => s.type === "fort").length;
 
   if (loading) {
     return (
@@ -81,6 +85,14 @@ const Dashboard = () => {
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/3 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.1, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
       </div>
 
       {/* Header */}
@@ -107,13 +119,16 @@ const Dashboard = () => {
             >
               <path d="M12 2L8 6H4L3 8V10L2 12V22H22V12L21 10V8L20 6H16L12 2ZM12 4.5L14.5 7H9.5L12 4.5ZM5 9H19V10H5V9ZM4 12H20V20H4V12ZM6 14V18H8V14H6ZM10 14V18H14V14H10ZM16 14V18H18V14H16Z" />
             </motion.svg>
-            <motion.span 
-              className="font-serif text-xl font-bold text-temple-gold"
-              whileHover={{ letterSpacing: "0.02em" }}
-              transition={{ duration: 0.2 }}
-            >
-              Divya Darshan
-            </motion.span>
+            <div className="flex flex-col">
+              <motion.span 
+                className="font-serif text-xl font-bold text-temple-gold"
+                whileHover={{ letterSpacing: "0.02em" }}
+                transition={{ duration: 0.2 }}
+              >
+                Heritage India
+              </motion.span>
+              <span className="text-[10px] text-white/50 -mt-1">Discover • Explore • Preserve</span>
+            </div>
           </motion.a>
 
           {/* User Menu */}
@@ -130,13 +145,13 @@ const Dashboard = () => {
 
       {/* Content Area */}
       <main className="max-w-7xl mx-auto px-4 py-8 relative">
-        {/* Region Title */}
+        {/* Region Title & Description */}
         <motion.div
           key={activeRegion}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="mb-8"
+          className="mb-6"
         >
           <motion.h1 
             className="font-serif text-3xl md:text-4xl text-white"
@@ -144,7 +159,7 @@ const Dashboard = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Temples in{" "}
+            Heritage Sites in{" "}
             <motion.span 
               className="text-temple-saffron inline-block"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -156,12 +171,12 @@ const Dashboard = () => {
             </motion.span>
           </motion.h1>
           <motion.p 
-            className="text-white/60 mt-2"
+            className="text-white/60 mt-2 max-w-2xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.4 }}
           >
-            Discover sacred destinations and plan your spiritual journey
+            {regions.find((r) => r.id === activeRegion)?.description}
           </motion.p>
           
           {/* Decorative line */}
@@ -173,30 +188,61 @@ const Dashboard = () => {
           />
         </motion.div>
 
-        {/* Temple Cards Grid */}
+        {/* Filter Tabs */}
+        <motion.div 
+          className="flex items-center gap-3 mb-6"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+        >
+          <Filter className="w-4 h-4 text-white/60" />
+          <div className="flex gap-2">
+            <Button
+              variant={filter === "all" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setFilter("all")}
+              className={filter === "all" ? "bg-temple-gold text-temple-dark hover:bg-temple-gold/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+            >
+              All ({allSites.length})
+            </Button>
+            <Button
+              variant={filter === "temple" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setFilter("temple")}
+              className={filter === "temple" ? "bg-temple-saffron text-white hover:bg-temple-saffron/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+            >
+              <Building2 className="w-4 h-4 mr-1" />
+              Temples ({templeCount})
+            </Button>
+            <Button
+              variant={filter === "fort" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setFilter("fort")}
+              className={filter === "fort" ? "bg-amber-600 text-white hover:bg-amber-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+            >
+              <Landmark className="w-4 h-4 mr-1" />
+              Forts ({fortCount})
+            </Button>
+          </div>
+        </motion.div>
+
+        {/* Sites Grid */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeRegion}
+            key={`${activeRegion}-${filter}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           >
-            {temples.map((temple, index) => (
-              <TempleCard
-                key={temple.id}
-                id={temple.id}
-                name={temple.name}
-                location={temple.location}
-                image={temple.image}
-                openTime={temple.openTime}
-                closeTime={temple.closeTime}
-                tagline={temple.tagline}
-                isOpen={isTempleOpen(temple.openTime, temple.closeTime)}
-                isSaved={savedTemples.has(temple.id)}
-                onSave={handleSaveTemple}
-                onViewDetails={handleViewDetails}
+            {sites.map((site, index) => (
+              <HeritageSiteCard
+                key={site.id}
+                site={site}
+                isOpen={isSiteOpen(site.openTime, site.closeTime)}
+                isSaved={savedSites.has(site.id)}
+                onSave={handleSaveSite}
                 index={index}
               />
             ))}
@@ -204,7 +250,7 @@ const Dashboard = () => {
         </AnimatePresence>
 
         {/* Empty State */}
-        {temples.length === 0 && (
+        {sites.length === 0 && (
           <motion.div 
             className="text-center py-20"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -212,7 +258,7 @@ const Dashboard = () => {
             transition={{ duration: 0.4 }}
           >
             <p className="text-white/60 text-lg">
-              No temples found for this region
+              No {filter === "all" ? "heritage sites" : filter + "s"} found for this region
             </p>
           </motion.div>
         )}
