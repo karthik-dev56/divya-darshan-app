@@ -4,26 +4,35 @@ import { Clock, MapPin, Star, Building2, Landmark, Crown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
 
-// Import site images
-import hampiVittalaImg from "@/assets/sites/hampi-vittala.jpg";
-import meenakshiTempleImg from "@/assets/sites/meenakshi-temple.jpg";
-import raigadFortImg from "@/assets/sites/raigad-fort.jpg";
-import thanjavurTempleImg from "@/assets/sites/thanjavur-temple.jpg";
-import somnathTempleImg from "@/assets/sites/somnath-temple.jpg";
-import indianTempleImg from "@/assets/sites/indian-temple.jpg";
-import indianFortImg from "@/assets/sites/indian-fort.jpg";
-import mysoreTempleImg from "@/assets/sites/mysore-temple.jpg";
-import heritageSiteImg from "@/assets/sites/heritage-site.jpg";
-
-// Existing temple images
+// Import unique site images - Nagpur
 import deekshabhoomiImg from "@/assets/temples/deekshabhoomi.jpg";
 import tekdiGaneshImg from "@/assets/temples/tekdi-ganesh.jpg";
 import ramtekRamMandirImg from "@/assets/temples/ramtek-ram-mandir.jpg";
-import koradiMataImg from "@/assets/temples/koradi-mata.jpg";
+import sitabuldiFortImg from "@/assets/sites/sitabuldi-fort.jpg";
+
+// Maharashtra
+import raigadFortImg from "@/assets/sites/raigad-fort.jpg";
 import siddhivinayakImg from "@/assets/temples/siddhivinayak.jpg";
 import shirdiSaiBabaImg from "@/assets/temples/shirdi-sai-baba.jpg";
-import trimbakeshwarImg from "@/assets/temples/trimbakeshwar.jpg";
-import mahalaxmiKolhapurImg from "@/assets/temples/mahalaxmi-kolhapur.jpg";
+import kailashTempleElloraImg from "@/assets/sites/kailash-temple-ellora.jpg";
+
+// Karnataka
+import hampiVittalaImg from "@/assets/sites/hampi-vittala.jpg";
+import badamiCavesImg from "@/assets/sites/badami-caves.jpg";
+import murudeshwarTempleImg from "@/assets/sites/murudeshwar-temple.jpg";
+import chitradurgaFortImg from "@/assets/sites/chitradurga-fort.jpg";
+
+// Tamil Nadu
+import meenakshiTempleImg from "@/assets/sites/meenakshi-temple.jpg";
+import thanjavurTempleImg from "@/assets/sites/thanjavur-temple.jpg";
+import gingeeFortImg from "@/assets/sites/gingee-fort.jpg";
+import shoreTempleImg from "@/assets/sites/shore-temple.jpg";
+
+// Gujarat
+import somnathTempleImg from "@/assets/sites/somnath-temple.jpg";
+import dwarkadhishTempleImg from "@/assets/sites/dwarkadhish-temple.jpg";
+import raniKiVavImg from "@/assets/sites/rani-ki-vav.jpg";
+import palitanaTemplesImg from "@/assets/sites/palitana-temples.jpg";
 
 interface HeritageSite {
   id: string;
@@ -54,7 +63,7 @@ const sitesData: RegionSites[] = [
       { id: "deekshabhoomi", name: "Deekshabhoomi", location: "Nagpur Central", type: "temple", openTime: "6:00 AM", closeTime: "9:00 PM", image: deekshabhoomiImg, rating: 4.6, entryFee: "Free" },
       { id: "tekdi-ganesh-temple", name: "Tekdi Ganesh Temple", location: "Sitabuldi", type: "temple", openTime: "5:00 AM", closeTime: "10:00 PM", image: tekdiGaneshImg, rating: 4.7, entryFee: "Free", vipAvailable: true },
       { id: "ramtek-fort-temple", name: "Ramtek Fort Temple", location: "Ramtek", type: "temple", openTime: "5:00 AM", closeTime: "9:00 PM", image: ramtekRamMandirImg, rating: 4.5, entryFee: "Free", vipAvailable: true },
-      { id: "sitabuldi-fort", name: "Sitabuldi Fort", location: "Sitabuldi", type: "fort", openTime: "10:00 AM", closeTime: "5:00 PM", image: indianFortImg, rating: 3.8, entryFee: "₹25" },
+      { id: "sitabuldi-fort", name: "Sitabuldi Fort", location: "Sitabuldi", type: "fort", openTime: "10:00 AM", closeTime: "5:00 PM", image: sitabuldiFortImg, rating: 3.8, entryFee: "₹25" },
     ],
   },
   {
@@ -65,7 +74,7 @@ const sitesData: RegionSites[] = [
       { id: "raigad-fort", name: "Raigad Fort", location: "Raigad District", type: "fort", openTime: "9:00 AM", closeTime: "6:00 PM", image: raigadFortImg, rating: 4.8, entryFee: "₹50", vipAvailable: true },
       { id: "siddhivinayak-temple", name: "Siddhivinayak Temple", location: "Mumbai", type: "temple", openTime: "5:30 AM", closeTime: "10:00 PM", image: siddhivinayakImg, rating: 4.7, entryFee: "Free", vipAvailable: true },
       { id: "shirdi-sai-temple", name: "Shirdi Sai Baba", location: "Shirdi", type: "temple", openTime: "4:00 AM", closeTime: "11:00 PM", image: shirdiSaiBabaImg, rating: 4.9, entryFee: "Free", vipAvailable: true },
-      { id: "kailash-temple-ellora", name: "Kailash Temple Ellora", location: "Aurangabad", type: "temple", openTime: "6:00 AM", closeTime: "6:00 PM", image: heritageSiteImg, rating: 4.9, entryFee: "₹40" },
+      { id: "kailash-temple-ellora", name: "Kailash Temple Ellora", location: "Aurangabad", type: "temple", openTime: "6:00 AM", closeTime: "6:00 PM", image: kailashTempleElloraImg, rating: 4.9, entryFee: "₹40" },
     ],
   },
   {
@@ -74,9 +83,9 @@ const sitesData: RegionSites[] = [
     description: "Rich Vijayanagara, Chalukyan and Hoysala architecture heritage",
     sites: [
       { id: "vittala-temple-hampi", name: "Vittala Temple", location: "Hampi", type: "temple", openTime: "8:30 AM", closeTime: "5:30 PM", image: hampiVittalaImg, rating: 4.9, entryFee: "₹40" },
-      { id: "badami-caves", name: "Badami Caves", location: "Bagalkot", type: "temple", openTime: "6:00 AM", closeTime: "6:00 PM", image: mysoreTempleImg, rating: 4.6, entryFee: "₹25" },
-      { id: "murudeshwar-temple", name: "Murudeshwar Temple", location: "Bhatkal", type: "temple", openTime: "6:00 AM", closeTime: "8:30 PM", image: indianTempleImg, rating: 4.5, entryFee: "Free" },
-      { id: "chitradurga-fort", name: "Chitradurga Fort", location: "Chitradurga", type: "fort", openTime: "6:00 AM", closeTime: "6:00 PM", image: indianFortImg, rating: 4.5, entryFee: "₹25" },
+      { id: "badami-caves", name: "Badami Caves", location: "Bagalkot", type: "temple", openTime: "6:00 AM", closeTime: "6:00 PM", image: badamiCavesImg, rating: 4.6, entryFee: "₹25" },
+      { id: "murudeshwar-temple", name: "Murudeshwar Temple", location: "Bhatkal", type: "temple", openTime: "6:00 AM", closeTime: "8:30 PM", image: murudeshwarTempleImg, rating: 4.5, entryFee: "Free" },
+      { id: "chitradurga-fort", name: "Chitradurga Fort", location: "Chitradurga", type: "fort", openTime: "6:00 AM", closeTime: "6:00 PM", image: chitradurgaFortImg, rating: 4.5, entryFee: "₹25" },
     ],
   },
   {
@@ -86,8 +95,8 @@ const sitesData: RegionSites[] = [
     sites: [
       { id: "meenakshi-temple", name: "Meenakshi Temple", location: "Madurai", type: "temple", openTime: "5:00 AM", closeTime: "10:00 PM", image: meenakshiTempleImg, rating: 4.9, entryFee: "Free", vipAvailable: true },
       { id: "brihadeeswarar-temple", name: "Brihadeeswarar Temple", location: "Thanjavur", type: "temple", openTime: "6:00 AM", closeTime: "8:30 PM", image: thanjavurTempleImg, rating: 4.9, entryFee: "Free" },
-      { id: "gingee-fort", name: "Gingee Fort", location: "Villupuram", type: "fort", openTime: "8:00 AM", closeTime: "5:00 PM", image: indianFortImg, rating: 4.4, entryFee: "₹25" },
-      { id: "shore-temple", name: "Shore Temple", location: "Mahabalipuram", type: "temple", openTime: "6:00 AM", closeTime: "6:00 PM", image: heritageSiteImg, rating: 4.6, entryFee: "₹40" },
+      { id: "gingee-fort", name: "Gingee Fort", location: "Villupuram", type: "fort", openTime: "8:00 AM", closeTime: "5:00 PM", image: gingeeFortImg, rating: 4.4, entryFee: "₹25" },
+      { id: "shore-temple", name: "Shore Temple", location: "Mahabalipuram", type: "temple", openTime: "6:00 AM", closeTime: "6:00 PM", image: shoreTempleImg, rating: 4.6, entryFee: "₹40" },
     ],
   },
   {
@@ -96,9 +105,9 @@ const sitesData: RegionSites[] = [
     description: "Sacred pilgrimage sites and historic trading port heritage",
     sites: [
       { id: "somnath-temple", name: "Somnath Temple", location: "Prabhas Patan", type: "temple", openTime: "6:00 AM", closeTime: "9:30 PM", image: somnathTempleImg, rating: 4.9, entryFee: "Free", vipAvailable: true },
-      { id: "dwarkadhish-temple", name: "Dwarkadhish Temple", location: "Dwarka", type: "temple", openTime: "6:30 AM", closeTime: "9:30 PM", image: indianTempleImg, rating: 4.8, entryFee: "Free", vipAvailable: true },
-      { id: "rani-ki-vav", name: "Rani ki Vav", location: "Patan", type: "fort", openTime: "8:00 AM", closeTime: "6:00 PM", image: heritageSiteImg, rating: 4.7, entryFee: "₹40" },
-      { id: "palitana-temples", name: "Palitana Temples", location: "Bhavnagar", type: "temple", openTime: "6:30 AM", closeTime: "6:30 PM", image: mysoreTempleImg, rating: 4.8, entryFee: "Free" },
+      { id: "dwarkadhish-temple", name: "Dwarkadhish Temple", location: "Dwarka", type: "temple", openTime: "6:30 AM", closeTime: "9:30 PM", image: dwarkadhishTempleImg, rating: 4.8, entryFee: "Free", vipAvailable: true },
+      { id: "rani-ki-vav", name: "Rani ki Vav", location: "Patan", type: "fort", openTime: "8:00 AM", closeTime: "6:00 PM", image: raniKiVavImg, rating: 4.7, entryFee: "₹40" },
+      { id: "palitana-temples", name: "Palitana Temples", location: "Bhavnagar", type: "temple", openTime: "6:30 AM", closeTime: "6:30 PM", image: palitanaTemplesImg, rating: 4.8, entryFee: "Free" },
     ],
   },
 ];
