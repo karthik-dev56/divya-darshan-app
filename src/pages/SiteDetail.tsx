@@ -16,7 +16,12 @@ import {
   Heart,
   Share2,
   Info,
-  CheckCircle2
+  CheckCircle2,
+  Navigation,
+  Utensils,
+  ShoppingBag,
+  Hotel,
+  MapPinned
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -448,6 +453,137 @@ const SiteDetail = () => {
                           <CheckCircle2 className="w-3 h-3 mr-1" />
                           {facility}
                         </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+
+            {/* Google Maps Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.65 }}
+            >
+              <Button
+                onClick={() => window.open(site.googleMapsUrl, '_blank')}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                <Navigation className="w-4 h-4 mr-2" />
+                Open in Google Maps
+              </Button>
+            </motion.div>
+
+            {/* Food */}
+            {site.food && site.food.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+              >
+                <Card className="bg-card border-border/50">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-orange-500">
+                      <Utensils className="w-5 h-5" />
+                      Food & Cuisine
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {site.food.map((item, index) => (
+                        <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+
+            {/* Shopping */}
+            {site.shopping && site.shopping.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.75 }}
+              >
+                <Card className="bg-card border-border/50">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-pink-500">
+                      <ShoppingBag className="w-5 h-5" />
+                      Shopping
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {site.shopping.map((item, index) => (
+                        <Badge key={index} variant="secondary" className="bg-pink-500/10 text-pink-400">
+                          {item}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+
+            {/* Accommodation */}
+            {site.accommodation && site.accommodation.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                <Card className="bg-card border-border/50">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-cyan-500">
+                      <Hotel className="w-5 h-5" />
+                      Accommodation
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {site.accommodation.map((item, index) => (
+                        <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+
+            {/* Places Nearby */}
+            {site.placesNearby && site.placesNearby.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.85 }}
+              >
+                <Card className="bg-card border-border/50">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-emerald-500">
+                      <MapPinned className="w-5 h-5" />
+                      Places Nearby
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {site.placesNearby.map((place, index) => (
+                        <div key={index} className="flex justify-between items-center p-2 bg-secondary/30 rounded-lg">
+                          <div>
+                            <p className="text-sm font-medium text-foreground">{place.name}</p>
+                            <p className="text-xs text-muted-foreground">{place.type}</p>
+                          </div>
+                          <Badge variant="outline" className="text-emerald-500 border-emerald-500/50">
+                            {place.distance}
+                          </Badge>
+                        </div>
                       ))}
                     </div>
                   </CardContent>
