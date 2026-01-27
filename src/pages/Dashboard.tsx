@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
+import { useSavedSites } from "@/hooks/useSavedSites";
 import UserMenu from "@/components/UserMenu";
 import RegionTabs from "@/components/dashboard/RegionTabs";
 import HeritageSiteCard from "@/components/dashboard/HeritageSiteCard";
 import { regions, getSitesByRegion, isSiteOpen } from "@/data/heritageSitesData";
-import { useToast } from "@/hooks/use-toast";
 import { Building2, Landmark, Filter, Sparkles, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -15,9 +15,8 @@ type FilterType = "all" | "temple" | "fort" | "must-visit" | "hidden-gem";
 const Dashboard = () => {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
-  const { toast } = useToast();
+  const { toggleSaveSite, isSiteSaved } = useSavedSites();
   const [activeRegion, setActiveRegion] = useState("nagpur");
-  const [savedSites, setSavedSites] = useState<Set<string>>(new Set());
   const [filter, setFilter] = useState<FilterType>("all");
 
   // Redirect to auth if not logged in
@@ -27,24 +26,8 @@ const Dashboard = () => {
     }
   }, [user, loading, navigate]);
 
-  const handleSaveSite = (siteId: string) => {
-    setSavedSites((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(siteId)) {
-        newSet.delete(siteId);
-        toast({
-          title: "Removed from saved",
-          description: "Site removed from your saved list",
-        });
-      } else {
-        newSet.add(siteId);
-        toast({
-          title: "Saved!",
-          description: "Site added to your saved list",
-        });
-      }
-      return newSet;
-    });
+  const handleSaveSite = (siteId: string, siteName: string, siteImage?: string, siteType?: string) => {
+    toggleSaveSite(siteId, siteName, siteImage, siteType);
   };
 
   const allSites = getSitesByRegion(activeRegion);
@@ -263,8 +246,8 @@ const Dashboard = () => {
                 key={site.id}
                 site={site}
                 isOpen={isSiteOpen(site.openTime, site.closeTime)}
-                isSaved={savedSites.has(site.id)}
-                onSave={handleSaveSite}
+                isSaved={isSiteSaved(site.id)}
+                onSave={(id) => handleSaveSite(id, site.name, site.image, site.type)}
                 index={index}
               />
             ))}

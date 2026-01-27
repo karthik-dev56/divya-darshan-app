@@ -21,21 +21,26 @@ import {
   Utensils,
   ShoppingBag,
   Hotel,
-  MapPinned
+  MapPinned,
+  Plus,
+  Check
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { getSiteById, isSiteOpen, HeritageSite } from "@/data/heritageSitesData";
+import { useSavedSites } from "@/hooks/useSavedSites";
+import { useItinerary } from "@/hooks/useItinerary";
 import { useToast } from "@/hooks/use-toast";
 
 const SiteDetail = () => {
   const { siteId } = useParams<{ siteId: string }>();
   const navigate = useNavigate();
+  const { toggleSaveSite, isSiteSaved } = useSavedSites();
+  const { addToItinerary, isInItinerary } = useItinerary();
   const { toast } = useToast();
   const [site, setSite] = useState<HeritageSite | null>(null);
-  const [saved, setSaved] = useState(false);
 
   useEffect(() => {
     if (siteId) {
@@ -49,11 +54,15 @@ const SiteDetail = () => {
   }, [siteId, navigate]);
 
   const handleSave = () => {
-    setSaved(!saved);
-    toast({
-      title: saved ? "Removed from saved" : "Saved!",
-      description: saved ? "Removed from your saved list" : "Added to your saved list",
-    });
+    if (site) {
+      toggleSaveSite(site.id, site.name, site.image, site.type);
+    }
+  };
+
+  const handleAddToItinerary = () => {
+    if (site) {
+      addToItinerary(site.id, site.name, site.image, site.location);
+    }
   };
 
   const handleShare = () => {
@@ -114,12 +123,31 @@ const SiteDetail = () => {
             onClick={handleSave}
             className="p-3 bg-black/50 backdrop-blur-sm rounded-full text-white hover:bg-black/70 transition-colors"
           >
-            <Heart className={`w-5 h-5 ${saved ? "fill-temple-red text-temple-red" : ""}`} />
+            <Heart className={`w-5 h-5 ${site && isSiteSaved(site.id) ? "fill-temple-red text-temple-red" : ""}`} />
           </motion.button>
           <motion.button
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleAddToItinerary}
+            className={`p-3 backdrop-blur-sm rounded-full text-white transition-colors ${
+              site && isInItinerary(site.id) 
+                ? "bg-green-500/70 hover:bg-green-500/90" 
+                : "bg-black/50 hover:bg-black/70"
+            }`}
+          >
+            {site && isInItinerary(site.id) ? (
+              <Check className="w-5 h-5" />
+            ) : (
+              <Plus className="w-5 h-5" />
+            )}
+          </motion.button>
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleShare}

@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      itinerary: {
+        Row: {
+          created_at: string
+          id: string
+          notes: string | null
+          site_id: string
+          site_image: string | null
+          site_location: string | null
+          site_name: string
+          updated_at: string
+          user_id: string
+          visit_date: string | null
+          visit_order: number | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          site_id: string
+          site_image?: string | null
+          site_location?: string | null
+          site_name: string
+          updated_at?: string
+          user_id: string
+          visit_date?: string | null
+          visit_order?: number | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          site_id?: string
+          site_image?: string | null
+          site_location?: string | null
+          site_name?: string
+          updated_at?: string
+          user_id?: string
+          visit_date?: string | null
+          visit_order?: number | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -40,6 +82,36 @@ export type Database = {
           id?: string
           phone?: string | null
           updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      saved_sites: {
+        Row: {
+          created_at: string
+          id: string
+          site_id: string
+          site_image: string | null
+          site_name: string
+          site_type: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          site_id: string
+          site_image?: string | null
+          site_name: string
+          site_type?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          site_id?: string
+          site_image?: string | null
+          site_name?: string
+          site_type?: string | null
           user_id?: string
         }
         Relationships: []
