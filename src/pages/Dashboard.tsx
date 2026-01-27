@@ -7,10 +7,10 @@ import UserMenu from "@/components/UserMenu";
 import RegionTabs from "@/components/dashboard/RegionTabs";
 import HeritageSiteCard from "@/components/dashboard/HeritageSiteCard";
 import { regions, getSitesByRegion, isSiteOpen } from "@/data/heritageSitesData";
-import { Building2, Landmark, Filter, Sparkles, Eye } from "lucide-react";
+import { Building2, Landmark, Filter, Sparkles, Eye, Zap, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type FilterType = "all" | "temple" | "fort" | "must-visit" | "hidden-gem";
+type FilterType = "all" | "temple" | "fort" | "must-visit" | "hidden-gem" | "drone-show" | "light-show";
 
 const Dashboard = () => {
   const { user, loading } = useAuth();
@@ -33,7 +33,7 @@ const Dashboard = () => {
   const allSites = getSitesByRegion(activeRegion);
   const sites = filter === "all" 
     ? allSites 
-    : filter === "must-visit" || filter === "hidden-gem"
+    : filter === "must-visit" || filter === "hidden-gem" || filter === "drone-show" || filter === "light-show"
     ? allSites.filter(site => site.category === filter)
     : allSites.filter(site => site.type === filter);
 
@@ -41,6 +41,8 @@ const Dashboard = () => {
   const fortCount = allSites.filter(s => s.type === "fort").length;
   const mustVisitCount = allSites.filter(s => s.category === "must-visit").length;
   const hiddenGemCount = allSites.filter(s => s.category === "hidden-gem").length;
+  const droneShowCount = allSites.filter(s => s.category === "drone-show").length;
+  const lightShowCount = allSites.filter(s => s.category === "light-show").length;
 
   if (loading) {
     return (
@@ -227,6 +229,24 @@ const Dashboard = () => {
             >
               <Eye className="w-4 h-4 mr-1" />
               Hidden Gems ({hiddenGemCount})
+            </Button>
+            <Button
+              variant={filter === "drone-show" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setFilter("drone-show")}
+              className={filter === "drone-show" ? "bg-cyan-600 text-white hover:bg-cyan-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+            >
+              <Plane className="w-4 h-4 mr-1" />
+              Drone Shows ({droneShowCount})
+            </Button>
+            <Button
+              variant={filter === "light-show" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setFilter("light-show")}
+              className={filter === "light-show" ? "bg-yellow-600 text-white hover:bg-yellow-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+            >
+              <Zap className="w-4 h-4 mr-1" />
+              Light Shows ({lightShowCount})
             </Button>
           </div>
         </motion.div>
