@@ -67,6 +67,15 @@ import uparkotFortImg from "@/assets/sites/uparkot-fort.jpg";
 import diuFortImg from "@/assets/sites/diu-fort.jpg";
 import ainaMahalBhujImg from "@/assets/sites/aina-mahal-bhuj.jpg";
 
+// Hidden Gem unique sites - NEW
+import vakatakaCavesImg from "@/assets/sites/vakataka-caves.jpg";
+import markandaTempleImg from "@/assets/sites/markanda-temple.jpg";
+import anjaneriCavesImg from "@/assets/sites/anjaneri-caves.jpg";
+import aiholeTemplesImg from "@/assets/sites/aihole-temples.jpg";
+import adichanallurSiteImg from "@/assets/sites/adichanallur-site.jpg";
+import lothalRuinsImg from "@/assets/sites/lothal-ruins.jpg";
+import dholaviraRuinsImg from "@/assets/sites/dholavira-ruins.jpg";
+
 // Existing temple images
 import deekshabhoomiImg from "@/assets/temples/deekshabhoomi.jpg";
 import tekdiGaneshImg from "@/assets/temples/tekdi-ganesh.jpg";
@@ -2392,6 +2401,343 @@ export const heritageSitesData: HeritageSite[] = [
       { name: "Kutch Museum", distance: "1 km", type: "Museum" },
       { name: "White Desert", distance: "80 km", type: "Desert" },
       { name: "Mandvi Beach", distance: "56 km", type: "Beach" }
+    ]
+  },
+
+  // ==================== TRUE HIDDEN GEMS - UNIQUE ARCHAEOLOGICAL & HISTORICAL SITES ====================
+  
+  // NAGPUR REGION - True Hidden Gems
+  { 
+    id: "vakataka-caves-ghatotkacha", 
+    name: "Ghatotkacha Vakataka Caves", 
+    location: "Wardha, Vidarbha", 
+    region: "nagpur", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: vakatakaCavesImg, 
+    tagline: "Ancient Vakataka dynasty rock-cut caves - Predecessors to Ajanta", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "These 4th-5th century rock-cut caves were created by the Vakataka dynasty, the same patrons who funded the later phase of Ajanta Caves. Archaeological treasure virtually unknown to tourists.", 
+    history: "The Vakatakas (250-500 CE) ruled from Vidarbha and were master patrons of art. Their daughter-in-law married into the Gupta dynasty. These caves predate their famous Ajanta patronage.", 
+    architecture: "Early Vakataka rock-cut architecture with Buddhist viharas and chaityas carved into hillside", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["Hire local guide from Wardha", "Virtually no tourists - pristine experience", "Combine with Sevagram Ashram visit", "Carry food and water"], 
+    rating: 4.2, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Sevagram Ashram", "Paunar Ashram", "Wardha town"], 
+    facilities: ["Parking at base", "Basic paths"],
+    googleMapsUrl: "https://maps.google.com/?q=Ghatotkacha+Caves+Wardha",
+    food: ["Pack your own", "Wardha town restaurants", "Sevagram Ashram meals"],
+    shopping: ["Khadi products from Sevagram", "Organic items", "Gandhi memorabilia"],
+    accommodation: ["Sevagram Ashram guest house", "Wardha hotels"],
+    placesNearby: [
+      { name: "Sevagram Ashram", distance: "15 km", type: "Ashram" },
+      { name: "Paunar Ashram", distance: "8 km", type: "Ashram" },
+      { name: "Wardha City", distance: "12 km", type: "City" }
+    ]
+  },
+
+  { 
+    id: "mansar-excavations", 
+    name: "Mansar Archaeological Site", 
+    location: "Mansar, Ramtek", 
+    region: "nagpur", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: vakatakaCavesImg, 
+    tagline: "Vakataka palace ruins and Pravara Sena's royal complex", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 25, foreign: 100 }, 
+    vipPassAvailable: false, 
+    importance: "Active archaeological excavation revealing Vakataka king Pravara Sena II's palace complex. Terracotta seals, sculptures, and structural remains of 5th century royal residence.", 
+    history: "Excavations by ASI have uncovered the Pravareshwar Shiva Temple and royal palace. Pravara Sena II was the poet-king who wrote Setubandha in Prakrit.", 
+    architecture: "Vakataka-era brick and stone structures with temple ruins", 
+    averageExpenses: { budget: "₹200-400", mid: "₹600-1000", premium: "₹1500+" }, 
+    tips: ["Visit the on-site museum", "Combine with Ramtek Temple", "Early morning for best light", "Ongoing excavations - parts may be restricted"], 
+    rating: 4.0, 
+    bestTimeToVisit: "October to February", 
+    nearbyAttractions: ["Ramtek Temple", "Khindsi Lake", "Nagardhan Fort"], 
+    facilities: ["Small museum", "Parking", "Guides available"],
+    googleMapsUrl: "https://maps.google.com/?q=Mansar+Archaeological+Site+Ramtek",
+    food: ["Pack snacks", "Ramtek town eateries"],
+    shopping: ["Archaeological replicas", "Local crafts"],
+    accommodation: ["MTDC Ramtek", "Hotels in Nagpur"],
+    placesNearby: [
+      { name: "Ramtek Temple", distance: "5 km", type: "Temple" },
+      { name: "Khindsi Lake", distance: "8 km", type: "Lake" },
+      { name: "Nagardhan Fort", distance: "6 km", type: "Fort" }
+    ]
+  },
+
+  // MAHARASHTRA - True Hidden Gems
+  { 
+    id: "markanda-temple-ruins", 
+    name: "Markanda Temple Complex", 
+    location: "Gadchiroli, Vidarbha", 
+    region: "maharashtra", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: markandaTempleImg, 
+    tagline: "8th century Hemadpanthi ruins in remote Vidarbha forests", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "An 8th century temple complex hidden deep in Gadchiroli forests. Features remarkably preserved Hemadpanthi stone carvings that rival Khajuraho in intricacy.", 
+    history: "Built by the Nagavanshi rulers, later patronized by the Gond kings. The temple survived due to its remote forest location.", 
+    architecture: "Hemadpanthi style with intricate erotic sculptures and mythological panels", 
+    averageExpenses: { budget: "₹600-1000", mid: "₹1500-2500", premium: "₹4000+" }, 
+    tips: ["Check local security situation before visiting", "Hire local guide mandatory", "4WD vehicle recommended", "Truly off-the-beaten-path"], 
+    rating: 4.3, 
+    bestTimeToVisit: "November to February", 
+    nearbyAttractions: ["Chaprala Wildlife Sanctuary", "Gadchiroli forests", "Tribal villages"], 
+    facilities: ["Very basic", "Local guides"],
+    googleMapsUrl: "https://maps.google.com/?q=Markanda+Temple+Gadchiroli",
+    food: ["Pack your own food", "Simple tribal cuisine available"],
+    shopping: ["Tribal handicrafts", "Bamboo products", "Forest honey"],
+    accommodation: ["Forest rest houses", "Basic lodges in Gadchiroli"],
+    placesNearby: [
+      { name: "Chaprala Wildlife Sanctuary", distance: "40 km", type: "Wildlife" },
+      { name: "Gadchiroli Town", distance: "35 km", type: "Town" }
+    ]
+  },
+
+  { 
+    id: "anjaneri-caves", 
+    name: "Anjaneri Buddhist Caves", 
+    location: "Nashik, Maharashtra", 
+    region: "maharashtra", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: anjaneriCavesImg, 
+    tagline: "Ancient Buddhist caves on Hanuman's legendary birthplace hill", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Hidden Buddhist caves on Anjaneri hill, believed to be Lord Hanuman's birthplace. 2nd-3rd century rock-cut monastery cells with panoramic Nashik valley views.", 
+    history: "These caves were carved by Buddhist monks during the Satavahana period. The hill is also sacred in Hindu tradition as Anjani Mata's abode.", 
+    architecture: "Hinayana Buddhist rock-cut cells (viharas) with simple stone beds and water cisterns", 
+    averageExpenses: { budget: "₹400-600", mid: "₹1000-1500", premium: "₹2500+" }, 
+    tips: ["Moderate trek required", "Sunrise trek highly recommended", "Combine with Trimbakeshwar", "Carry 2L water minimum"], 
+    rating: 4.1, 
+    bestTimeToVisit: "October to February, Monsoon for greenery", 
+    nearbyAttractions: ["Trimbakeshwar Temple", "Brahmagiri Hill", "Pandavleni Caves"], 
+    facilities: ["Trek route", "No facilities at caves"],
+    googleMapsUrl: "https://maps.google.com/?q=Anjaneri+Hill+Nashik",
+    food: ["Pack your own", "Trimbakeshwar town food"],
+    shopping: ["Religious items at Trimbakeshwar", "Local produce"],
+    accommodation: ["Trimbakeshwar hotels", "Nashik city hotels"],
+    placesNearby: [
+      { name: "Trimbakeshwar Temple", distance: "8 km", type: "Temple" },
+      { name: "Brahmagiri Hill", distance: "10 km", type: "Trekking" },
+      { name: "Pandavleni Caves", distance: "25 km", type: "Caves" }
+    ]
+  },
+
+  // KARNATAKA - True Hidden Gems
+  { 
+    id: "aihole-temples", 
+    name: "Aihole Temple Complex", 
+    location: "Bagalkot, Karnataka", 
+    region: "karnataka", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: aiholeTemplesImg, 
+    tagline: "Cradle of Indian Temple Architecture - 125+ ancient temples", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 25, foreign: 300 }, 
+    vipPassAvailable: false, 
+    importance: "The laboratory where Indian temple architecture was invented. 125+ temples spanning 6th-12th century, each experimenting with different styles that became Dravidian architecture.", 
+    history: "The Chalukyas of Badami (543-753 CE) used Aihole as their architectural workshop. Temples here show evolution from Buddhist caves to the grand Dravidian style.", 
+    architecture: "Proto-Dravidian experimental styles - Durga Temple (apsidal), Lad Khan (flat roof), Meguti (Jain)", 
+    averageExpenses: { budget: "₹500-800", mid: "₹1500-2200", premium: "₹3500+" }, 
+    tips: ["Hire guide to understand architectural evolution", "Visit Durga Temple and Lad Khan Temple", "Less crowded than Badami/Pattadakal", "Full day needed"], 
+    rating: 4.5, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Pattadakal", "Badami Caves", "Mahakuta"], 
+    facilities: ["Guides", "Parking", "Small museum", "Cafeteria"],
+    googleMapsUrl: "https://maps.google.com/?q=Aihole+Temples+Karnataka",
+    food: ["Local North Karnataka cuisine", "Jolada rotti", "Simple eateries"],
+    shopping: ["Stone carvings", "Local handicrafts", "Temple souvenirs"],
+    accommodation: ["Badami hotels", "KSTDC properties"],
+    placesNearby: [
+      { name: "Pattadakal", distance: "10 km", type: "UNESCO Site" },
+      { name: "Badami Caves", distance: "35 km", type: "Caves" },
+      { name: "Mahakuta Temple", distance: "20 km", type: "Temple" },
+      { name: "Banashankari Temple", distance: "25 km", type: "Temple" }
+    ]
+  },
+
+  { 
+    id: "yana-rocks", 
+    name: "Yana Caves & Rock Formations", 
+    location: "Uttara Kannada, Karnataka", 
+    region: "karnataka", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: aiholeTemplesImg, 
+    tagline: "Mysterious black crystalline rock formations with ancient cave temple", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Unique black limestone (karst) formations rising 120m from dense forest. Contains Bhairaveshwara and Mohini rock peaks with a Shiva cave temple.", 
+    history: "Ancient pilgrimage site with Swayambhu Shiva lingam in natural cave. The unique geology creates otherworldly landscape unlike anywhere in India.", 
+    architecture: "Natural rock formations with cave temple", 
+    averageExpenses: { budget: "₹600-1000", mid: "₹1800-2800", premium: "₹4000+" }, 
+    tips: ["2km forest trek from parking", "Monsoon is spectacular but slippery", "Photography paradise", "Carry rain gear in monsoon"], 
+    rating: 4.4, 
+    bestTimeToVisit: "October to March, Monsoon for dramatic views", 
+    nearbyAttractions: ["Vibhooti Falls", "Sirsi", "Gokarna"], 
+    facilities: ["Parking", "Basic trek path", "Forest department guides"],
+    googleMapsUrl: "https://maps.google.com/?q=Yana+Caves+Karnataka",
+    food: ["Pack snacks", "Sirsi town restaurants", "Forest cuisine"],
+    shopping: ["Forest products", "Spices", "Honey"],
+    accommodation: ["Sirsi hotels", "Jungle lodges", "Gokarna stays"],
+    placesNearby: [
+      { name: "Vibhooti Falls", distance: "8 km", type: "Waterfall" },
+      { name: "Sirsi", distance: "30 km", type: "Town" },
+      { name: "Gokarna", distance: "70 km", type: "Temple Town" }
+    ]
+  },
+
+  // TAMIL NADU - True Hidden Gems
+  { 
+    id: "adichanallur-excavation", 
+    name: "Adichanallur Iron Age Site", 
+    location: "Thoothukudi, Tamil Nadu", 
+    region: "tamil-nadu", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: adichanallurSiteImg, 
+    tagline: "3,000 year old Iron Age burial site - India's earliest civilization", 
+    openTime: "9:00 AM", 
+    closeTime: "5:00 PM", 
+    entryFee: { indian: 25, foreign: 200 }, 
+    vipPassAvailable: false, 
+    importance: "One of India's most significant archaeological discoveries. 3,000-year-old Iron Age burial urns containing human remains, bronze items, and early Tamil Brahmi inscriptions.", 
+    history: "Discovered in 1876, systematic excavations revealed burial urns from 1000-500 BCE. Proves advanced civilization existed in Tamil Nadu contemporary to Vedic period.", 
+    architecture: "Archaeological excavation site with burial urns and artifacts", 
+    averageExpenses: { budget: "₹400-700", mid: "₹1200-1800", premium: "₹3000+" }, 
+    tips: ["Visit the on-site museum", "Hire archaeological guide", "Combine with Korkai ancient port", "Photography permitted"], 
+    rating: 4.0, 
+    bestTimeToVisit: "November to March", 
+    nearbyAttractions: ["Korkai ancient port", "Tiruchendur Temple", "Thoothukudi town"], 
+    facilities: ["Museum", "Parking", "Guides available"],
+    googleMapsUrl: "https://maps.google.com/?q=Adichanallur+Archaeological+Site",
+    food: ["Thoothukudi fish curry", "South Indian meals"],
+    shopping: ["Salt", "Palmyra products", "Local handicrafts"],
+    accommodation: ["Thoothukudi hotels", "Tiruchendur stays"],
+    placesNearby: [
+      { name: "Tiruchendur Murugan Temple", distance: "40 km", type: "Temple" },
+      { name: "Korkai Ancient Port", distance: "15 km", type: "Archaeological" },
+      { name: "Thoothukudi", distance: "20 km", type: "City" }
+    ]
+  },
+
+  { 
+    id: "sittanavasal-cave", 
+    name: "Sittanavasal Jain Cave Paintings", 
+    location: "Pudukkottai, Tamil Nadu", 
+    region: "tamil-nadu", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: adichanallurSiteImg, 
+    tagline: "Ajanta of the South - 7th century Jain cave with paintings", 
+    openTime: "9:00 AM", 
+    closeTime: "5:00 PM", 
+    entryFee: { indian: 25, foreign: 200 }, 
+    vipPassAvailable: false, 
+    importance: "The only surviving example of Jain paintings in Tamil Nadu. 7th century Pandya-era frescoes depicting Samavasarana (Jain cosmic assembly) with lotus pond and wildlife.", 
+    history: "Created during the Pandya period (7th century CE), these caves housed Jain monks. The paintings survived due to the cave's dry micro-climate.", 
+    architecture: "Rock-cut Jain cave with ancient frescoes and inscriptions", 
+    averageExpenses: { budget: "₹400-600", mid: "₹1000-1500", premium: "₹2500+" }, 
+    tips: ["Photography may be restricted", "See the faded but beautiful lotus pool painting", "Combine with Pudukkottai museums", "ASI protected site"], 
+    rating: 4.2, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Pudukkottai Museum", "Tirumayam Fort", "Avudaiyarkoil"], 
+    facilities: ["Parking", "Basic facilities"],
+    googleMapsUrl: "https://maps.google.com/?q=Sittanavasal+Cave+Paintings",
+    food: ["Pudukkottai local food", "South Indian meals"],
+    shopping: ["Terracotta items", "Local crafts"],
+    accommodation: ["Pudukkottai hotels", "Trichy hotels"],
+    placesNearby: [
+      { name: "Pudukkottai Museum", distance: "16 km", type: "Museum" },
+      { name: "Tirumayam Fort", distance: "25 km", type: "Fort" },
+      { name: "Trichy", distance: "50 km", type: "City" }
+    ]
+  },
+
+  // GUJARAT - True Hidden Gems
+  { 
+    id: "lothal-harappan-site", 
+    name: "Lothal Harappan City", 
+    location: "Ahmedabad, Gujarat", 
+    region: "gujarat", 
+    type: "fort", 
+    category: "hidden-gem",
+    image: lothalRuinsImg, 
+    tagline: "World's oldest dock - 4,500 year old Indus Valley port city", 
+    openTime: "8:00 AM", 
+    closeTime: "5:00 PM", 
+    entryFee: { indian: 25, foreign: 300 }, 
+    vipPassAvailable: false, 
+    importance: "The world's earliest known dock (2400 BCE). A major Harappan trading port with planned streets, drainage, and bead-making workshops. India's most accessible Indus Valley site.", 
+    history: "Thriving port city from 2400-1900 BCE trading with Mesopotamia and Egypt. Excavated 1955-1960 revealing 5,000 year old urban planning and maritime technology.", 
+    architecture: "Harappan/Indus Valley urban planning with brick structures, dock, and warehouse", 
+    averageExpenses: { budget: "₹400-700", mid: "₹1200-1800", premium: "₹3000+" }, 
+    tips: ["Visit the excellent ASI museum first", "See the ancient dock structure", "Combine with Ahmedabad heritage", "Early morning best"], 
+    rating: 4.5, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Ahmedabad", "Nal Sarovar Bird Sanctuary", "Modhera"], 
+    facilities: ["Museum", "Parking", "Guides", "Cafeteria"],
+    googleMapsUrl: "https://maps.google.com/?q=Lothal+Archaeological+Site",
+    food: ["Pack snacks", "Ahmedabad food", "Highway dhabas"],
+    shopping: ["Replica artifacts", "Local crafts"],
+    accommodation: ["Ahmedabad hotels (85 km)", "Highway motels"],
+    placesNearby: [
+      { name: "Ahmedabad", distance: "85 km", type: "City" },
+      { name: "Nal Sarovar", distance: "70 km", type: "Bird Sanctuary" },
+      { name: "Bhurkhi", distance: "6 km", type: "Village" }
+    ]
+  },
+
+  { 
+    id: "dholavira-harappan", 
+    name: "Dholavira - UNESCO Harappan City", 
+    location: "Kutch, Gujarat", 
+    region: "gujarat", 
+    type: "fort", 
+    category: "hidden-gem",
+    image: dholaviraRuinsImg, 
+    tagline: "UNESCO World Heritage - 5,000 year old planned city with world's first signboard", 
+    openTime: "8:00 AM", 
+    closeTime: "5:00 PM", 
+    entryFee: { indian: 40, foreign: 600 }, 
+    vipPassAvailable: false, 
+    importance: "UNESCO World Heritage Site (2021). Fifth largest Harappan city featuring world's earliest signboard (10 symbols), sophisticated water harvesting, and unique fortification.", 
+    history: "Flourished 3000-1500 BCE. Unique among Harappan sites for its three-part city division - citadel, middle town, and lower town. Abandoned possibly due to climate change.", 
+    architecture: "Harappan urban planning with stone walls, reservoirs, and ceremonial ground", 
+    averageExpenses: { budget: "₹800-1200", mid: "₹2000-3000", premium: "₹5000+" }, 
+    tips: ["Combine with Rann of Kutch visit", "Stay overnight for White Rann experience", "Carry water and sun protection", "New museum opened 2024"], 
+    rating: 4.6, 
+    bestTimeToVisit: "November to February", 
+    nearbyAttractions: ["Rann of Kutch", "Fossil Park Khadir", "Bhuj"], 
+    facilities: ["Modern museum", "Parking", "Guides", "Restrooms"],
+    googleMapsUrl: "https://maps.google.com/?q=Dholavira+Archaeological+Site",
+    food: ["Pack food", "Resort dining", "Kutchi cuisine at Bhuj"],
+    shopping: ["Kutchi embroidery", "Rann Utsav items", "Fossil replicas"],
+    accommodation: ["Dholavira tented resorts", "Bhuj hotels", "Rann resorts"],
+    placesNearby: [
+      { name: "White Rann", distance: "30 km", type: "Desert" },
+      { name: "Fossil Park", distance: "10 km", type: "Geological" },
+      { name: "Bhuj", distance: "250 km", type: "City" }
     ]
   },
 ];
