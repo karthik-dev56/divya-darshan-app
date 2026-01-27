@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronDown, Building2, Landmark, MapPin, Users } from "lucide-react";
+import { ChevronDown, Building2, Landmark, MapPin, Sparkles, Plane, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-heritage.jpg";
 
@@ -7,14 +7,16 @@ const popularSites = [
   { name: "Hampi", type: "UNESCO Site" },
   { name: "Raigad Fort", type: "Maratha Capital" },
   { name: "Meenakshi Temple", type: "Dravidian Marvel" },
+  { name: "Mysore Drone Show", type: "3000+ Drones" },
+  { name: "Gol Gumbaz", type: "Light & Sound" },
   { name: "Somnath", type: "Jyotirlinga" },
 ];
 
 const stats = [
-  { icon: Building2, value: "50+", label: "Historic Temples" },
-  { icon: Landmark, value: "30+", label: "Ancient Forts" },
-  { icon: MapPin, value: "5", label: "States Covered" },
-  { icon: Users, value: "1M+", label: "Annual Visitors" },
+  { icon: Building2, value: "100+", label: "Heritage Sites" },
+  { icon: Plane, value: "25+", label: "Drone Shows" },
+  { icon: Zap, value: "30+", label: "Light Shows" },
+  { icon: MapPin, value: "5", label: "Regions" },
 ];
 
 const Hero = () => {
@@ -88,9 +90,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Explore ancient temples, majestic forts, and UNESCO World Heritage sites across 
-          Nagpur, Maharashtra, Karnataka, Tamil Nadu & Gujarat. Get timings, entry fees, 
-          VIP passes, and insider tips for your heritage journey.
+          Explore temples, forts, spectacular drone shows & mesmerizing light shows across 
+          Nagpur, Maharashtra, Karnataka, Tamil Nadu & Gujarat. Discover hidden gems, 
+          get real-time info, timings, entry fees, and plan your complete heritage journey.
         </motion.p>
 
         {/* CTA Buttons */}
