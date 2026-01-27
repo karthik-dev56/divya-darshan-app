@@ -79,6 +79,20 @@ import sittanavasalCavesImg from "@/assets/sites/sittanavasal-caves.jpg";
 import lothalRuinsImg from "@/assets/sites/lothal-ruins.jpg";
 import dholaviraRuinsImg from "@/assets/sites/dholavira-ruins.jpg";
 
+// Additional Hidden Gems images
+import adalajStepwellImg from "@/assets/sites/adalaj-stepwell.jpg";
+import champanerRuinsImg from "@/assets/sites/champaner-ruins.jpg";
+import junagadhCavesImg from "@/assets/sites/junagadh-caves.jpg";
+import kirtiStambhImg from "@/assets/sites/kirti-stambh.jpg";
+import patanJainTempleImg from "@/assets/sites/patan-jain-temple.jpg";
+import bhimbetkaImg from "@/assets/sites/bhimbetka-paintings.jpg";
+import megalithicSiteImg from "@/assets/sites/megalithic-site.jpg";
+import chalukyanRuinsImg from "@/assets/sites/chalukyan-ruins.jpg";
+import jainCaveKarnatakaImg from "@/assets/sites/jain-cave-karnataka.jpg";
+import templeTankImg from "@/assets/sites/temple-tank.jpg";
+import naturalShivaCaveImg from "@/assets/sites/natural-shiva-cave.jpg";
+import rockArtSiteImg from "@/assets/sites/rock-art-site.jpg";
+
 // Existing temple images
 import deekshabhoomiImg from "@/assets/temples/deekshabhoomi.jpg";
 import tekdiGaneshImg from "@/assets/temples/tekdi-ganesh.jpg";
@@ -2677,14 +2691,14 @@ export const heritageSitesData: HeritageSite[] = [
     ]
   },
 
-  // GUJARAT - True Hidden Gems
+  // GUJARAT - True Hidden Gems (5 unique archaeological sites)
   { 
     id: "lothal-harappan-site", 
     name: "Lothal Harappan City", 
     location: "Ahmedabad, Gujarat", 
     region: "gujarat", 
-    type: "fort", 
-    category: "must-visit",
+    type: "temple", 
+    category: "hidden-gem",
     image: lothalRuinsImg, 
     tagline: "World's oldest dock - 4,500 year old Indus Valley port city", 
     openTime: "8:00 AM", 
@@ -2716,8 +2730,8 @@ export const heritageSitesData: HeritageSite[] = [
     name: "Dholavira - UNESCO Harappan City", 
     location: "Kutch, Gujarat", 
     region: "gujarat", 
-    type: "fort", 
-    category: "must-visit",
+    type: "temple", 
+    category: "hidden-gem",
     image: dholaviraRuinsImg, 
     tagline: "UNESCO World Heritage - 5,000 year old planned city with world's first signboard", 
     openTime: "8:00 AM", 
@@ -2741,6 +2755,503 @@ export const heritageSitesData: HeritageSite[] = [
       { name: "White Rann", distance: "30 km", type: "Desert" },
       { name: "Fossil Park", distance: "10 km", type: "Geological" },
       { name: "Bhuj", distance: "250 km", type: "City" }
+    ]
+  },
+
+  { 
+    id: "adalaj-stepwell", 
+    name: "Adalaj Ni Vav Stepwell", 
+    location: "Gandhinagar, Gujarat", 
+    region: "gujarat", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: adalajStepwellImg, 
+    tagline: "Five-story masterpiece of Indo-Islamic stepwell architecture", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "One of India's finest stepwells, built by a queen for travelers. Five stories deep with 500+ year old carvings combining Hindu and Islamic motifs in perfect harmony.", 
+    history: "Built in 1499 by Queen Rudabai in memory of her husband Veer Singh. Unique example of Hindu-Islamic fusion architecture created during Gujarat Sultanate period.", 
+    architecture: "Indo-Islamic stepwell (Vav) with octagonal shape, intricate carvings, and natural air-conditioning system", 
+    averageExpenses: { budget: "₹200-400", mid: "₹600-1000", premium: "₹1500+" }, 
+    tips: ["Coolest at noon when sunlight reaches bottom", "Photography paradise", "Morning light best for carvings", "Combine with Modhera"], 
+    rating: 4.4, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Modhera Sun Temple", "Gandhinagar", "Ahmedabad"], 
+    facilities: ["Parking", "Garden", "Basic facilities"],
+    googleMapsUrl: "https://maps.google.com/?q=Adalaj+Stepwell",
+    food: ["Ahmedabad street food", "Gujarati thali nearby"],
+    shopping: ["Handicrafts", "Bandhani textiles"],
+    accommodation: ["Gandhinagar hotels", "Ahmedabad hotels"],
+    placesNearby: [
+      { name: "Modhera Sun Temple", distance: "90 km", type: "Temple" },
+      { name: "Ahmedabad", distance: "18 km", type: "City" },
+      { name: "Gandhinagar", distance: "6 km", type: "Capital City" }
+    ]
+  },
+
+  { 
+    id: "khapra-kodia-caves", 
+    name: "Khapra Kodia Buddhist Caves", 
+    location: "Junagadh, Gujarat", 
+    region: "gujarat", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: junagadhCavesImg, 
+    tagline: "2,300 year old Mauryan-era rock-cut monastery - Contemporary to Ashoka", 
+    openTime: "8:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Among India's oldest rock-cut caves from the Mauryan period (3rd century BCE). Buddhist monks lived here when Emperor Ashoka's rock edicts were being carved nearby.", 
+    history: "Created 300-200 BCE during the spread of Buddhism under Mauryan patronage. These simple monk cells predate the elaborate Ajanta caves by 400 years.", 
+    architecture: "Early Buddhist rock-cut viharas with simple stone beds and meditation cells", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["Combine with Uparkot Fort", "See nearby Ashoka's Rock Edicts", "Best at sunset", "Less crowded alternative to Uparkot caves"], 
+    rating: 4.0, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Uparkot Fort", "Ashoka's Rock Edicts", "Girnar Hill"], 
+    facilities: ["Parking", "Basic access"],
+    googleMapsUrl: "https://maps.google.com/?q=Khapra+Kodia+Caves+Junagadh",
+    food: ["Junagadhi cuisine", "Local vegetarian food"],
+    shopping: ["Local handicrafts", "Girnar trek supplies"],
+    accommodation: ["Junagadh hotels", "Girnar area stays"],
+    placesNearby: [
+      { name: "Uparkot Fort", distance: "2 km", type: "Fort" },
+      { name: "Ashoka's Edicts", distance: "3 km", type: "Historical" },
+      { name: "Girnar Hill", distance: "5 km", type: "Pilgrimage" }
+    ]
+  },
+
+  { 
+    id: "patan-jain-temples", 
+    name: "Patan Jain Temples & Anhilwad", 
+    location: "Patan, Gujarat", 
+    region: "gujarat", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: patanJainTempleImg, 
+    tagline: "Hidden gem near Rani ki Vav - Exquisite Jain temples in ancient capital", 
+    openTime: "7:00 AM", 
+    closeTime: "7:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Patan was capital of Gujarat for 650 years (746-1411 CE). The Jain temples here feature incredibly detailed marble and wood carvings rivaling Mount Abu.", 
+    history: "Anhilwad Patan was founded by Chavda dynasty in 746 CE. The Solanki kings made it one of medieval India's greatest cities. Jain temples preserve this glory.", 
+    architecture: "Maru-Gurjara Jain temple architecture with delicate wood and marble carvings", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["Combine with Rani ki Vav visit", "See Patola silk weaving", "Photography in temples restricted", "Morning for best light"], 
+    rating: 4.3, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Rani ki Vav", "Sahasralinga Talav", "Modhera"], 
+    facilities: ["Parking", "Temple facilities"],
+    googleMapsUrl: "https://maps.google.com/?q=Patan+Jain+Temple+Gujarat",
+    food: ["Gujarati thali", "Patan sweets"],
+    shopping: ["Patola silk sarees (very expensive)", "Handlooms"],
+    accommodation: ["Patan guesthouses", "Modhera resorts"],
+    placesNearby: [
+      { name: "Rani ki Vav", distance: "2 km", type: "UNESCO Stepwell" },
+      { name: "Sahasralinga Talav", distance: "3 km", type: "Archaeological" },
+      { name: "Modhera Sun Temple", distance: "35 km", type: "Temple" }
+    ]
+  },
+
+  // NAGPUR - Additional Hidden Gems (3 more to make 5 total)
+  { 
+    id: "pauni-buddhist-stupa", 
+    name: "Pauni Buddhist Stupa", 
+    location: "Bhandara, Vidarbha", 
+    region: "nagpur", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: bhimbetkaImg, 
+    tagline: "2,200 year old Satavahana Buddhist stupa - Vidarbha's Sanchi", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "One of the largest Buddhist stupas in Maharashtra from the Satavahana period (2nd century BCE). Ancient trade center on the silk route through Vidarbha.", 
+    history: "Pauni was a major Buddhist center during Satavahana rule. The stupa and monastery ruins show Vidarbha's importance in spreading Buddhism across Central India.", 
+    architecture: "Satavahana-period Buddhist stupa with brick construction and carved railings", 
+    averageExpenses: { budget: "₹300-500", mid: "₹700-1100", premium: "₹1500+" }, 
+    tips: ["Virtually unknown even to locals", "Combine with Bhandara Fort", "Archaeological museum nearby", "Peaceful rural setting"], 
+    rating: 3.9, 
+    bestTimeToVisit: "October to February", 
+    nearbyAttractions: ["Bhandara Fort", "Navegaon", "Nagzira Wildlife"], 
+    facilities: ["Parking", "Basic paths"],
+    googleMapsUrl: "https://maps.google.com/?q=Pauni+Archaeological+Site",
+    food: ["Pack your own", "Bhandara town food"],
+    shopping: ["Local bamboo products", "Forest items"],
+    accommodation: ["Bhandara hotels", "Nagpur city"],
+    placesNearby: [
+      { name: "Bhandara Town", distance: "8 km", type: "Town" },
+      { name: "Navegaon Bandh", distance: "45 km", type: "Wildlife" }
+    ]
+  },
+
+  { 
+    id: "adam-megalithic", 
+    name: "Adam Megalithic Site", 
+    location: "Nagpur District", 
+    region: "nagpur", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: megalithicSiteImg, 
+    tagline: "Prehistoric megalithic burial site - 3,000 year old dolmens and menhirs", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "One of Central India's significant megalithic sites with stone burial chambers (dolmens) dating to 1000-500 BCE. Evidence of Iron Age civilization in Vidarbha.", 
+    history: "The megalithic people of Vidarbha created these stone burial structures 3,000 years ago. The site shows links to South Indian megalithic cultures.", 
+    architecture: "Prehistoric megalithic dolmens, stone circles, and burial chambers", 
+    averageExpenses: { budget: "₹200-400", mid: "₹500-800", premium: "₹1200+" }, 
+    tips: ["Extremely off-the-beaten-path", "Hire local guide from village", "4WD recommended in monsoon", "Archaeological treasure"], 
+    rating: 3.7, 
+    bestTimeToVisit: "October to February", 
+    nearbyAttractions: ["Nagpur city", "Ramtek Temple"], 
+    facilities: ["Very basic", "Village nearby"],
+    googleMapsUrl: "https://maps.google.com/?q=Adam+Nagpur+Maharashtra",
+    food: ["Pack your own"],
+    shopping: ["None"],
+    accommodation: ["Nagpur city hotels"],
+    placesNearby: [
+      { name: "Nagpur City", distance: "40 km", type: "City" },
+      { name: "Ramtek", distance: "35 km", type: "Temple Town" }
+    ]
+  },
+
+  { 
+    id: "paunar-vakataka-temple", 
+    name: "Prabhavati Gupta Temple Ruins", 
+    location: "Paunar, Wardha", 
+    region: "nagpur", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: naturalShivaCaveImg, 
+    tagline: "Vakataka queen's 5th century temple - Daughter of Chandragupta II", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Temple ruins associated with Queen Prabhavati Gupta, daughter of the great Gupta emperor Chandragupta II. She ruled the Vakataka kingdom as regent.", 
+    history: "Prabhavati Gupta (died 443 CE) married into the Vakatakas, uniting India's two greatest dynasties. Her inscriptions and temple patronage are found here.", 
+    architecture: "Vakataka-era brick and stone temple foundations with Gupta influence", 
+    averageExpenses: { budget: "₹200-400", mid: "₹500-900", premium: "₹1400+" }, 
+    tips: ["Combine with Vinoba Bhave Ashram", "Rich historical significance", "Peaceful spiritual atmosphere", "Guided tours from Ashram"], 
+    rating: 4.0, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Brahmavidya Mandir", "Sevagram", "Wardha"], 
+    facilities: ["Ashram facilities nearby"],
+    googleMapsUrl: "https://maps.google.com/?q=Paunar+Wardha",
+    food: ["Ashram vegetarian food", "Wardha restaurants"],
+    shopping: ["Khadi", "Organic products"],
+    accommodation: ["Ashram guest house", "Wardha hotels"],
+    placesNearby: [
+      { name: "Brahmavidya Mandir", distance: "0.5 km", type: "Ashram" },
+      { name: "Sevagram", distance: "8 km", type: "Ashram" },
+      { name: "Wardha", distance: "6 km", type: "Town" }
+    ]
+  },
+
+  // MAHARASHTRA - Additional Hidden Gems (3 more to make 5 total)
+  { 
+    id: "pitalkhora-caves", 
+    name: "Pitalkhora Buddhist Caves", 
+    location: "Aurangabad, Maharashtra", 
+    region: "maharashtra", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: rockArtSiteImg, 
+    tagline: "The 'Parent of Ajanta' - Oldest Buddhist caves in Maharashtra", 
+    openTime: "9:00 AM", 
+    closeTime: "5:00 PM", 
+    entryFee: { indian: 15, foreign: 100 }, 
+    vipPassAvailable: false, 
+    importance: "Dating to 2nd century BCE, these are Maharashtra's oldest Buddhist caves. The sculptural style here influenced the later, more famous Ajanta caves.", 
+    history: "Created during the Satavahana period (250 BCE - 250 CE). Once had elaborate paintings now mostly lost. The caves were a prototype for later Deccan Buddhist art.", 
+    architecture: "Early Hinayana Buddhist rock-cut caves with chaitya and viharas", 
+    averageExpenses: { budget: "₹400-600", mid: "₹1000-1500", premium: "₹2500+" }, 
+    tips: ["Much less crowded than Ajanta", "Trek through forest required", "Combine with Ellora", "ASI protected site"], 
+    rating: 4.1, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Ellora Caves", "Ajanta Caves", "Aurangabad"], 
+    facilities: ["Parking at base", "Trek path"],
+    googleMapsUrl: "https://maps.google.com/?q=Pitalkhora+Caves",
+    food: ["Aurangabad biryani", "Pack snacks for trek"],
+    shopping: ["Aurangabad silk", "Bidri work"],
+    accommodation: ["Aurangabad hotels", "MTDC resort"],
+    placesNearby: [
+      { name: "Ellora Caves", distance: "40 km", type: "UNESCO Site" },
+      { name: "Ajanta Caves", distance: "80 km", type: "UNESCO Site" },
+      { name: "Aurangabad", distance: "80 km", type: "City" }
+    ]
+  },
+
+  { 
+    id: "kaundinyapur", 
+    name: "Kaundinyapur Archaeological Site", 
+    location: "Amravati, Maharashtra", 
+    region: "maharashtra", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: champanerRuinsImg, 
+    tagline: "Ancient city of sage Kaundinya - Satavahana and Vakataka capital", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Major archaeological excavation revealing a 2,500 year old city. Mentioned in ancient texts, it was a significant urban center during Satavahana and Vakataka periods.", 
+    history: "Named after sage Kaundinya who married a Naga princess (origin of Khmer royalty legend). Excavations reveal continuous habitation from 500 BCE to 500 CE.", 
+    architecture: "Archaeological remains including brick structures, coins, and artifacts", 
+    averageExpenses: { budget: "₹300-500", mid: "₹700-1100", premium: "₹1800+" }, 
+    tips: ["Active excavation site", "Contact ASI for guided tour", "Research and documentation ongoing", "Photography allowed"], 
+    rating: 3.8, 
+    bestTimeToVisit: "October to February", 
+    nearbyAttractions: ["Chikhaldara", "Melghat Tiger Reserve", "Amravati"], 
+    facilities: ["Basic", "Nearby town facilities"],
+    googleMapsUrl: "https://maps.google.com/?q=Kaundinyapur+Amravati",
+    food: ["Amravati local food", "Vidarbha cuisine"],
+    shopping: ["Orange products", "Cotton textiles"],
+    accommodation: ["Amravati hotels", "Chikhaldara resorts"],
+    placesNearby: [
+      { name: "Amravati City", distance: "15 km", type: "City" },
+      { name: "Chikhaldara", distance: "90 km", type: "Hill Station" },
+      { name: "Melghat", distance: "100 km", type: "Tiger Reserve" }
+    ]
+  },
+
+  { 
+    id: "ter-triveni", 
+    name: "Ter - Ancient Tagara", 
+    location: "Osmanabad, Maharashtra", 
+    region: "maharashtra", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: chalukyanRuinsImg, 
+    tagline: "2,000 year old Roman trade city - Mentioned in Greek texts", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Ancient Tagara mentioned in Greek and Roman texts as a major trade city on the silk route. Roman coins, terracotta, and trade goods excavated here.", 
+    history: "Thriving trade center from 200 BCE to 200 CE. Greek geographer Ptolemy mentioned it. Connected Deccan to Roman maritime trade via Sopara and Kalyan ports.", 
+    architecture: "Archaeological site with Satavahana-period structures and Buddhist remains", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["Triveni Sangam (3 river confluence) here", "Ancient trade route history", "Combine with Tuljapur", "Off-the-beaten-path gem"], 
+    rating: 3.9, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Tuljapur Bhavani", "Naldurg Fort", "Solapur"], 
+    facilities: ["Basic", "Town facilities"],
+    googleMapsUrl: "https://maps.google.com/?q=Ter+Osmanabad+Maharashtra",
+    food: ["Local Marathwada cuisine", "Jowar roti specialties"],
+    shopping: ["Bidri work from Bidar nearby"],
+    accommodation: ["Osmanabad hotels", "Solapur hotels"],
+    placesNearby: [
+      { name: "Tuljapur Temple", distance: "30 km", type: "Temple" },
+      { name: "Naldurg Fort", distance: "45 km", type: "Fort" },
+      { name: "Solapur", distance: "50 km", type: "City" }
+    ]
+  },
+
+  // KARNATAKA - Additional Hidden Gems (3 more to make 5 total)
+  { 
+    id: "chandramouleshwara", 
+    name: "Chandramouleshwara Temple, Unkal", 
+    location: "Hubli, Karnataka", 
+    region: "karnataka", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: jainCaveKarnatakaImg, 
+    tagline: "Forgotten Chalukyan masterpiece - 11th century architectural jewel", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "A hidden Chalukyan temple with extraordinary sculptural work rivaling Belur. Virtually unknown even to heritage enthusiasts, it's a treasure waiting to be discovered.", 
+    history: "Built during the later Chalukya period (11th century). The temple escaped destruction and neglect, preserving original carvings in excellent condition.", 
+    architecture: "Late Chalukyan Vesara style with intricate Hoysala-influence carvings", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["Locals may not know it - use GPS", "Photography permitted", "Dawn light best for sculptures", "Combine with Hubli-Dharwad heritage walk"], 
+    rating: 4.2, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Hubli-Dharwad", "Unkal Lake", "Nrupatunga Betta"], 
+    facilities: ["Temple facilities", "Parking"],
+    googleMapsUrl: "https://maps.google.com/?q=Chandramouleshwara+Temple+Hubli",
+    food: ["North Karnataka cuisine", "Dharwad peda sweets"],
+    shopping: ["Dharwad peda", "Local textiles"],
+    accommodation: ["Hubli hotels", "Dharwad hotels"],
+    placesNearby: [
+      { name: "Unkal Lake", distance: "2 km", type: "Lake" },
+      { name: "Hubli City", distance: "5 km", type: "City" },
+      { name: "Dharwad", distance: "20 km", type: "City" }
+    ]
+  },
+
+  { 
+    id: "gadag-trikuteshwara", 
+    name: "Trikuteshwara Temple Complex", 
+    location: "Gadag, Karnataka", 
+    region: "karnataka", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: chalukyanRuinsImg, 
+    tagline: "Forgotten capital of Kannada literature with stunning Chalukyan temples", 
+    openTime: "6:00 AM", 
+    closeTime: "8:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Gadag was where Kannada literature flourished. The Trikuteshwara complex has temples spanning 900 years (7th-16th century) with exceptional stone carving traditions.", 
+    history: "Seat of Kannada poets like Pampa. Chalukyas, Kalyana Chalukyas, and Vijayanagar all contributed temples here. The Saraswati temple has exquisite carvings.", 
+    architecture: "Evolution of Chalukyan to Hoysala style visible across multiple temples", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["See Saraswati Temple carvings", "Multiple temples in complex", "Literary heritage connection", "Combine with Lakkundi"], 
+    rating: 4.3, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Lakkundi", "Dambal", "Haveri"], 
+    facilities: ["Temple facilities", "Parking"],
+    googleMapsUrl: "https://maps.google.com/?q=Trikuteshwara+Temple+Gadag",
+    food: ["North Karnataka cuisine", "Rotis and curries"],
+    shopping: ["Kasuti embroidery", "Handlooms"],
+    accommodation: ["Gadag hotels", "Hubli hotels"],
+    placesNearby: [
+      { name: "Lakkundi Temples", distance: "12 km", type: "Temple Town" },
+      { name: "Dambal", distance: "15 km", type: "Temple" },
+      { name: "Hubli", distance: "55 km", type: "City" }
+    ]
+  },
+
+  { 
+    id: "badami-lower-caves", 
+    name: "Badami Natural Rock Formations", 
+    location: "Badami, Karnataka", 
+    region: "karnataka", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: yanaCavesImg, 
+    tagline: "Beyond the famous caves - Hidden Buddhist caves and rock shelters", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 15, foreign: 200 }, 
+    vipPassAvailable: false, 
+    importance: "Most tourists see only the main 4 caves. But Badami has hidden Buddhist caves, rock-cut shrines, and natural formations that reveal its prehistoric and early Buddhist heritage.", 
+    history: "Before the Chalukyan caves, Buddhist monks and prehistoric humans used these rock shelters. Petroglyphs and early inscriptions found in secluded spots.", 
+    architecture: "Pre-Chalukyan rock shelters with early Buddhist carvings and petroglyphs", 
+    averageExpenses: { budget: "₹400-700", mid: "₹1200-1800", premium: "₹3000+" }, 
+    tips: ["Hire local guide who knows hidden spots", "Beyond main tourist caves", "Trek to North Fort for more caves", "Best at sunset from Agastya Lake"], 
+    rating: 4.1, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Badami Caves", "Aihole", "Pattadakal"], 
+    facilities: ["Main cave facilities", "Local guides"],
+    googleMapsUrl: "https://maps.google.com/?q=Badami+Caves+Karnataka",
+    food: ["Local North Karnataka cuisine", "Jolada rotti"],
+    shopping: ["Stone sculptures", "Handlooms"],
+    accommodation: ["KSTDC Badami", "Heritage hotels"],
+    placesNearby: [
+      { name: "Badami Main Caves", distance: "0 km", type: "UNESCO Caves" },
+      { name: "Aihole", distance: "35 km", type: "Temple Town" },
+      { name: "Pattadakal", distance: "22 km", type: "UNESCO Site" }
+    ]
+  },
+
+  // TAMIL NADU - Additional Hidden Gems (3 more to make 5 total)
+  { 
+    id: "kalugumalai-jain", 
+    name: "Kalugumalai Jain Beds", 
+    location: "Thoothukudi, Tamil Nadu", 
+    region: "tamil-nadu", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: jainCaveKarnatakaImg, 
+    tagline: "8th century rock-cut Jain temple with 100+ carvings on a single rock", 
+    openTime: "6:00 AM", 
+    closeTime: "6:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "A massive rock covered with 100+ Jain Tirthankara carvings from the 8th century. The nearby unfinished Kalugasalamoorthy Temple is carved from a single boulder.", 
+    history: "Created by Jain monks during the Pandya period (8th century CE). Shows the strong presence of Jainism in Tamil Nadu before its decline.", 
+    architecture: "Pandyan-era rock-cut Jain sculptures and unfinished monolithic temple", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["The unfinished temple is unique", "Climb to top for all carvings", "Combine with Krishnapuram Palace", "Morning best for photography"], 
+    rating: 4.2, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Krishnapuram Palace", "Kovilpatti", "Tirunelveli"], 
+    facilities: ["Parking", "Basic facilities"],
+    googleMapsUrl: "https://maps.google.com/?q=Kalugumalai+Jain+Temple",
+    food: ["Tirunelveli halwa", "South Indian meals"],
+    shopping: ["Tirunelveli halwa", "Palm products"],
+    accommodation: ["Kovilpatti hotels", "Tirunelveli hotels"],
+    placesNearby: [
+      { name: "Krishnapuram Palace", distance: "15 km", type: "Palace" },
+      { name: "Kovilpatti", distance: "10 km", type: "Town" },
+      { name: "Tirunelveli", distance: "50 km", type: "City" }
+    ]
+  },
+
+  { 
+    id: "keezhadi-excavation", 
+    name: "Keezhadi Archaeological Site", 
+    location: "Sivaganga, Tamil Nadu", 
+    region: "tamil-nadu", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: templeTankImg, 
+    tagline: "Sangam-era urban civilization - 2,600 year old Tamil city", 
+    openTime: "9:00 AM", 
+    closeTime: "5:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "Revolutionary discovery proving advanced Tamil civilization existed 2,600 years ago. Urban planning, drainage, and Tamil-Brahmi inscriptions found here predate accepted history.", 
+    history: "Excavations since 2015 have revealed a sophisticated Sangam-era city from 6th century BCE. Challenges earlier narratives about South Indian civilization timeline.", 
+    architecture: "Archaeological excavation revealing ancient urban structures, wells, and artifacts", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["New museum opened 2024", "Ongoing excavations", "Combine with Madurai trip", "Historical significance is immense"], 
+    rating: 4.4, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Madurai", "Sivaganga Palace", "Ramanathapuram"], 
+    facilities: ["New museum", "Parking", "Guides"],
+    googleMapsUrl: "https://maps.google.com/?q=Keezhadi+Archaeological+Site",
+    food: ["Sivaganga cuisine", "Madurai specialties nearby"],
+    shopping: ["Archaeological replicas", "Tamil craft items"],
+    accommodation: ["Sivaganga hotels", "Madurai hotels"],
+    placesNearby: [
+      { name: "Madurai", distance: "80 km", type: "City" },
+      { name: "Sivaganga", distance: "15 km", type: "Town" },
+      { name: "Chettinad", distance: "40 km", type: "Heritage Region" }
+    ]
+  },
+
+  { 
+    id: "kazhugumalai-temple", 
+    name: "Thiruparankundram Rock Temple", 
+    location: "Madurai, Tamil Nadu", 
+    region: "tamil-nadu", 
+    type: "temple", 
+    category: "hidden-gem",
+    image: naturalShivaCaveImg, 
+    tagline: "One of the Six Abodes of Murugan - Ancient rock-cut cave temple", 
+    openTime: "5:30 AM", 
+    closeTime: "1:00 PM, 4:00 PM - 9:00 PM", 
+    entryFee: { indian: 0, foreign: 0 }, 
+    vipPassAvailable: false, 
+    importance: "First of the Arupadai Veedu (Six Battle Camps) of Lord Murugan. The rock-cut portions date to 8th century Pandya period, making it one of Tamil Nadu's oldest cave temples.", 
+    history: "Mentioned in Sangam literature. Nakkeerar's hymns glorify this site. The rock-cut shrines predate the gopuram and later additions.", 
+    architecture: "Pandyan rock-cut cave temple with later Nayak additions", 
+    averageExpenses: { budget: "₹200-400", mid: "₹600-1000", premium: "₹1800+" }, 
+    tips: ["Visit early morning for peace", "See the rock-cut portions behind main shrine", "Combine with Madurai Meenakshi", "Important pilgrimage site"], 
+    rating: 4.3, 
+    bestTimeToVisit: "Year-round, festivals for experience", 
+    nearbyAttractions: ["Meenakshi Temple", "Madurai city", "Pazhamudhircholai"], 
+    facilities: ["Temple facilities", "Parking", "Accommodation"],
+    googleMapsUrl: "https://maps.google.com/?q=Thiruparankundram+Temple",
+    food: ["Temple prasad", "Madurai jigarthanda"],
+    shopping: ["Religious items", "Brass lamps"],
+    accommodation: ["Temple choultries", "Madurai hotels"],
+    placesNearby: [
+      { name: "Meenakshi Temple", distance: "8 km", type: "Temple" },
+      { name: "Madurai City", distance: "8 km", type: "City" },
+      { name: "Alagar Kovil", distance: "25 km", type: "Temple" }
     ]
   },
 ];
