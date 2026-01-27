@@ -125,7 +125,7 @@ export const templesData: Temple[] = [
     name: "Meenakshi Amman Temple",
     location: "Madurai",
     region: "tamil-nadu",
-    openTime: "5:00 AM",
+    openTime: "4:30 AM",
     closeTime: "10:00 PM",
     image: meenakshiMaduraiImg,
     tagline: "Historic marvel with 14 colorful gopurams",
