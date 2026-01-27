@@ -7,10 +7,10 @@ import RegionTabs from "@/components/dashboard/RegionTabs";
 import HeritageSiteCard from "@/components/dashboard/HeritageSiteCard";
 import { regions, getSitesByRegion, isSiteOpen } from "@/data/heritageSitesData";
 import { useToast } from "@/hooks/use-toast";
-import { Building2, Landmark, Filter } from "lucide-react";
+import { Building2, Landmark, Filter, Sparkles, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type FilterType = "all" | "temple" | "fort";
+type FilterType = "all" | "temple" | "fort" | "must-visit" | "hidden-gem";
 
 const Dashboard = () => {
   const { user, loading } = useAuth();
@@ -50,10 +50,14 @@ const Dashboard = () => {
   const allSites = getSitesByRegion(activeRegion);
   const sites = filter === "all" 
     ? allSites 
+    : filter === "must-visit" || filter === "hidden-gem"
+    ? allSites.filter(site => site.category === filter)
     : allSites.filter(site => site.type === filter);
 
   const templeCount = allSites.filter(s => s.type === "temple").length;
   const fortCount = allSites.filter(s => s.type === "fort").length;
+  const mustVisitCount = allSites.filter(s => s.category === "must-visit").length;
+  const hiddenGemCount = allSites.filter(s => s.category === "hidden-gem").length;
 
   if (loading) {
     return (
@@ -222,6 +226,24 @@ const Dashboard = () => {
             >
               <Landmark className="w-4 h-4 mr-1" />
               Forts ({fortCount})
+            </Button>
+            <Button
+              variant={filter === "must-visit" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setFilter("must-visit")}
+              className={filter === "must-visit" ? "bg-green-600 text-white hover:bg-green-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+            >
+              <Sparkles className="w-4 h-4 mr-1" />
+              Must Visit ({mustVisitCount})
+            </Button>
+            <Button
+              variant={filter === "hidden-gem" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setFilter("hidden-gem")}
+              className={filter === "hidden-gem" ? "bg-purple-600 text-white hover:bg-purple-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+            >
+              <Eye className="w-4 h-4 mr-1" />
+              Hidden Gems ({hiddenGemCount})
             </Button>
           </div>
         </motion.div>
