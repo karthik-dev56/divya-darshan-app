@@ -69,10 +69,13 @@ import ainaMahalBhujImg from "@/assets/sites/aina-mahal-bhuj.jpg";
 
 // Hidden Gem unique sites - NEW
 import vakatakaCavesImg from "@/assets/sites/vakataka-caves.jpg";
+import mansarRuinsImg from "@/assets/sites/mansar-ruins.jpg";
 import markandaTempleImg from "@/assets/sites/markanda-temple.jpg";
 import anjaneriCavesImg from "@/assets/sites/anjaneri-caves.jpg";
 import aiholeTemplesImg from "@/assets/sites/aihole-temples.jpg";
+import yanaCavesImg from "@/assets/sites/yana-caves.jpg";
 import adichanallurSiteImg from "@/assets/sites/adichanallur-site.jpg";
+import sittanavasalCavesImg from "@/assets/sites/sittanavasal-caves.jpg";
 import lothalRuinsImg from "@/assets/sites/lothal-ruins.jpg";
 import dholaviraRuinsImg from "@/assets/sites/dholavira-ruins.jpg";
 
@@ -2447,7 +2450,7 @@ export const heritageSitesData: HeritageSite[] = [
     region: "nagpur", 
     type: "temple", 
     category: "hidden-gem",
-    image: vakatakaCavesImg, 
+    image: mansarRuinsImg, 
     tagline: "Vakataka palace ruins and Pravara Sena's royal complex", 
     openTime: "6:00 AM", 
     closeTime: "6:00 PM", 
@@ -2581,7 +2584,7 @@ export const heritageSitesData: HeritageSite[] = [
     region: "karnataka", 
     type: "temple", 
     category: "hidden-gem",
-    image: aiholeTemplesImg, 
+    image: yanaCavesImg, 
     tagline: "Mysterious black crystalline rock formations with ancient cave temple", 
     openTime: "6:00 AM", 
     closeTime: "6:00 PM", 
@@ -2648,7 +2651,7 @@ export const heritageSitesData: HeritageSite[] = [
     region: "tamil-nadu", 
     type: "temple", 
     category: "hidden-gem",
-    image: adichanallurSiteImg, 
+    image: sittanavasalCavesImg, 
     tagline: "Ajanta of the South - 7th century Jain cave with paintings", 
     openTime: "9:00 AM", 
     closeTime: "5:00 PM", 
