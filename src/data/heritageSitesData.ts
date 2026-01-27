@@ -93,6 +93,23 @@ import templeTankImg from "@/assets/sites/temple-tank.jpg";
 import naturalShivaCaveImg from "@/assets/sites/natural-shiva-cave.jpg";
 import rockArtSiteImg from "@/assets/sites/rock-art-site.jpg";
 
+// Drone Shows and Light Shows images
+import statueUnityDroneShowImg from "@/assets/sites/statue-unity-drone-show.jpg";
+import redFortLightShowImg from "@/assets/sites/red-fort-light-show.jpg";
+import golcondaLightShowImg from "@/assets/sites/golconda-light-show.jpg";
+import golGumbazLightShowImg from "@/assets/sites/gol-gumbaz-light-show.jpg";
+import thanjavurLightShowImg from "@/assets/sites/thanjavur-light-show.jpg";
+import mahabalipuramLightShowImg from "@/assets/sites/mahabalipuram-light-show.jpg";
+import sabarmatiLightShowImg from "@/assets/sites/sabarmati-light-show.jpg";
+import ahmedabadDroneShowImg from "@/assets/sites/ahmedabad-drone-show.jpg";
+import raigadLightShowImg from "@/assets/sites/raigad-light-show.jpg";
+import shaniwarwadaLightShowImg from "@/assets/sites/shaniwarwada-light-show.jpg";
+import gatewayDroneShowImg from "@/assets/sites/gateway-drone-show.jpg";
+import hampiLightShowImg from "@/assets/sites/hampi-light-show.jpg";
+import mysorePalaceLightShowImg from "@/assets/sites/mysore-palace-light-show.jpg";
+import deekshabhoomiLightShowImg from "@/assets/sites/deekshabhoomi-light-show.jpg";
+import nagpurDroneShowImg from "@/assets/sites/nagpur-drone-show.jpg";
+
 // Existing temple images
 import deekshabhoomiImg from "@/assets/temples/deekshabhoomi.jpg";
 import tekdiGaneshImg from "@/assets/temples/tekdi-ganesh.jpg";
@@ -104,7 +121,7 @@ import trimbakeshwarImg from "@/assets/temples/trimbakeshwar.jpg";
 import mahalaxmiKolhapurImg from "@/assets/temples/mahalaxmi-kolhapur.jpg";
 
 export type SiteType = "temple" | "fort";
-export type SiteCategory = "must-visit" | "hidden-gem" | "regular";
+export type SiteCategory = "must-visit" | "hidden-gem" | "regular" | "drone-show" | "light-show";
 
 export interface PlaceNearby {
   name: string;
@@ -3252,6 +3269,554 @@ export const heritageSitesData: HeritageSite[] = [
       { name: "Meenakshi Temple", distance: "8 km", type: "Temple" },
       { name: "Madurai City", distance: "8 km", type: "City" },
       { name: "Alagar Kovil", distance: "25 km", type: "Temple" }
+    ]
+  },
+
+  // ==================== DRONE SHOWS ====================
+  
+  // NAGPUR - Drone Show
+  { 
+    id: "nagpur-drone-festival", 
+    name: "Nagpur Drone Light Festival", 
+    location: "Futala Lake, Nagpur", 
+    region: "nagpur", 
+    type: "temple", 
+    category: "drone-show",
+    image: nagpurDroneShowImg, 
+    tagline: "Spectacular drone light show over Futala Lake with 500+ drones", 
+    openTime: "7:00 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Shows at 7:30 PM and 8:30 PM", 
+    entryFee: { indian: 200, foreign: 500, children: 100 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 500, 
+    importance: "Central India's largest drone light show featuring 500+ synchronized LED drones creating stunning aerial formations over Futala Lake.", 
+    history: "Launched in 2023 as part of Nagpur Smart City initiative. The show celebrates Vidarbha's heritage with formations depicting tigers, oranges, and cultural symbols.", 
+    architecture: "Open-air lakeside venue with modern seating arrangements", 
+    averageExpenses: { budget: "₹300-500", mid: "₹700-1000", premium: "₹1500+" }, 
+    tips: ["Book tickets online in advance", "Arrive 30 minutes early for good seats", "Evening food stalls available", "Best views from VIP section"], 
+    rating: 4.6, 
+    bestTimeToVisit: "October to February (winter evenings)", 
+    nearbyAttractions: ["Futala Lake Garden", "Seminary Hills", "Ambazari Lake"], 
+    facilities: ["Parking", "Food Court", "Restrooms", "Photography allowed"],
+    googleMapsUrl: "https://maps.google.com/?q=Futala+Lake+Nagpur",
+    food: ["Street food stalls", "Lakeside cafes", "Tarri Poha", "Local snacks"],
+    shopping: ["Drone merchandise", "Nagpur souvenirs", "Orange products"],
+    accommodation: ["Hotel Centre Point", "Radisson Blu", "Pride Hotel", "Le Meridien"],
+    placesNearby: [
+      { name: "Ambazari Lake", distance: "3 km", type: "Lake" },
+      { name: "Seminary Hills", distance: "2 km", type: "Hill" },
+      { name: "Deekshabhoomi", distance: "4 km", type: "Monument" },
+      { name: "Raman Science Centre", distance: "5 km", type: "Museum" }
+    ]
+  },
+
+  // MAHARASHTRA - Drone Shows
+  { 
+    id: "gateway-drone-show", 
+    name: "Gateway of India Drone Show", 
+    location: "Colaba, Mumbai", 
+    region: "maharashtra", 
+    type: "fort", 
+    category: "drone-show",
+    image: gatewayDroneShowImg, 
+    tagline: "1000+ drones creating magical patterns over the Arabian Sea", 
+    openTime: "7:00 PM", 
+    closeTime: "10:00 PM", 
+    darshanTimings: "Shows at 7:30 PM, 8:30 PM, 9:30 PM", 
+    entryFee: { indian: 300, foreign: 800, children: 150 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 1000, 
+    importance: "India's most iconic drone show location. Features 1000+ synchronized drones creating formations of Indian flag, Gateway, and Bollywood themes over the Arabian Sea.", 
+    history: "Started in 2022, the show has become Mumbai's premier evening attraction. Special shows during Republic Day, Independence Day, and Diwali draw lakhs of visitors.", 
+    architecture: "Historic British-era Gateway monument with open sea backdrop", 
+    averageExpenses: { budget: "₹500-800", mid: "₹1200-2000", premium: "₹3000+" }, 
+    tips: ["Book VIP for best views", "Weekends are very crowded", "Combine with Taj Hotel visit", "Arrive early to avoid traffic"], 
+    rating: 4.8, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Taj Mahal Palace", "Elephanta Caves", "Marine Drive"], 
+    facilities: ["Paid seating", "Food vendors", "Restrooms", "Photography spots"],
+    googleMapsUrl: "https://maps.google.com/?q=Gateway+of+India+Mumbai",
+    food: ["Taj restaurants", "Leopold Cafe", "Street food at Colaba Causeway"],
+    shopping: ["Colaba Causeway", "Taj boutiques", "Handicrafts"],
+    accommodation: ["Taj Mahal Palace", "Trident Nariman Point", "The Oberoi", "Sea Green Hotel"],
+    placesNearby: [
+      { name: "Taj Mahal Palace", distance: "0.1 km", type: "Hotel" },
+      { name: "Elephanta Caves", distance: "10 km (ferry)", type: "Caves" },
+      { name: "Marine Drive", distance: "3 km", type: "Promenade" },
+      { name: "Chhatrapati Shivaji Museum", distance: "1 km", type: "Museum" }
+    ]
+  },
+
+  // KARNATAKA - Drone Show
+  { 
+    id: "mysore-dasara-drone", 
+    name: "Mysore Dasara Drone Spectacle", 
+    location: "Mysore Palace Grounds", 
+    region: "karnataka", 
+    type: "fort", 
+    category: "drone-show",
+    image: mysorePalaceLightShowImg, 
+    tagline: "Spectacular 1500-drone show during Mysore Dasara festival", 
+    openTime: "7:00 PM", 
+    closeTime: "10:00 PM", 
+    darshanTimings: "Main show 8:00 PM - 8:45 PM", 
+    entryFee: { indian: 250, foreign: 600, children: 100 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 800, 
+    importance: "Part of the world-famous Mysore Dasara celebrations. 1500+ drones create formations of Chamundeshwari, Mysore Palace, and royal heritage themes.", 
+    history: "Introduced in 2022 to modernize the 400-year-old Dasara tradition. Combines ancient festival grandeur with cutting-edge technology.", 
+    architecture: "Indo-Saracenic palace with 100,000 bulbs as backdrop", 
+    averageExpenses: { budget: "₹600-1000", mid: "₹1500-2500", premium: "₹4000+" }, 
+    tips: ["Book 2-3 weeks in advance during Dasara", "Combine with palace illumination", "Stay in Mysore for full experience", "October dates vary yearly"], 
+    rating: 4.9, 
+    bestTimeToVisit: "September-October (Dasara period)", 
+    nearbyAttractions: ["Mysore Palace", "Chamundi Hills", "Brindavan Gardens"], 
+    facilities: ["Seating", "Food stalls", "Parking", "Live commentary"],
+    googleMapsUrl: "https://maps.google.com/?q=Mysore+Palace+Karnataka",
+    food: ["Mysore Pak", "Palace restaurants", "Mylari Dosa", "RRR Restaurant"],
+    shopping: ["Mysore silk", "Sandalwood products", "Palace souvenirs"],
+    accommodation: ["Radisson Blu", "Royal Orchid", "Grand Mercure", "Hotel Mayura"],
+    placesNearby: [
+      { name: "Chamundi Hills", distance: "13 km", type: "Temple" },
+      { name: "Brindavan Gardens", distance: "20 km", type: "Garden" },
+      { name: "Sri Chamarajendra Zoo", distance: "2 km", type: "Zoo" },
+      { name: "Mysore Palace", distance: "0 km", type: "Palace" }
+    ]
+  },
+
+  // GUJARAT - Drone Shows
+  { 
+    id: "statue-unity-drone", 
+    name: "Statue of Unity Drone Show", 
+    location: "Kevadia, Gujarat", 
+    region: "gujarat", 
+    type: "temple", 
+    category: "drone-show",
+    image: statueUnityDroneShowImg, 
+    tagline: "World-class 1000-drone show at the world's tallest statue", 
+    openTime: "7:00 PM", 
+    closeTime: "9:30 PM", 
+    darshanTimings: "Shows at 7:30 PM and 8:30 PM daily", 
+    entryFee: { indian: 350, foreign: 1000, children: 200 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 1000, 
+    importance: "One of India's most spectacular drone shows, held at the base of the 182-meter Statue of Unity - the world's tallest statue. 1000+ drones create Sardar Patel's life story in the sky.", 
+    history: "Launched in 2021, the show narrates the story of Indian independence and Sardar Vallabhbhai Patel's role in unifying India through stunning aerial formations.", 
+    architecture: "Modern Kevadia complex with open-air viewing amphitheater", 
+    averageExpenses: { budget: "₹800-1200", mid: "₹2000-3000", premium: "₹5000+" }, 
+    tips: ["Book online with statue entry", "Stay at Tent City for best experience", "Visit Valley of Flowers same day", "Weekend shows are crowded"], 
+    rating: 4.8, 
+    bestTimeToVisit: "October to March (pleasant weather)", 
+    nearbyAttractions: ["Statue of Unity", "Valley of Flowers", "Sardar Sarovar Dam", "Cactus Garden"], 
+    facilities: ["Amphitheater seating", "Food court", "Parking", "Gift shop"],
+    googleMapsUrl: "https://maps.google.com/?q=Statue+of+Unity+Kevadia",
+    food: ["Ekta Mall food court", "Gujarati thali", "Multi-cuisine restaurants"],
+    shopping: ["Statue replicas", "Khadi products", "Gujarat handicrafts", "Souvenirs"],
+    accommodation: ["Tent City Narmada", "Shrestha Bharat", "Jungle Safari Lodge", "Statue of Unity hotels"],
+    placesNearby: [
+      { name: "Statue of Unity", distance: "0 km", type: "Monument" },
+      { name: "Valley of Flowers", distance: "1 km", type: "Garden" },
+      { name: "Sardar Sarovar Dam", distance: "3 km", type: "Dam" },
+      { name: "Jungle Safari", distance: "2 km", type: "Wildlife" }
+    ]
+  },
+
+  { 
+    id: "ahmedabad-riverfront-drone", 
+    name: "Ahmedabad Riverfront Drone Festival", 
+    location: "Sabarmati Riverfront", 
+    region: "gujarat", 
+    type: "fort", 
+    category: "drone-show",
+    image: ahmedabadDroneShowImg, 
+    tagline: "500+ drones creating stunning reflections over Sabarmati River", 
+    openTime: "7:00 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Daily shows at 7:30 PM (weekends) and special occasions", 
+    entryFee: { indian: 200, foreign: 500, children: 100 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 500, 
+    importance: "Gujarat's premier drone show featuring 500+ drones creating formations of Gandhi's life, Ahmedabad heritage, and Indian culture with stunning river reflections.", 
+    history: "Part of Ahmedabad Smart City initiative since 2022. The shows celebrate Gujarat's rich heritage including Dandi March reenactments and cultural festivals.", 
+    architecture: "Modern riverfront promenade with amphitheater seating", 
+    averageExpenses: { budget: "₹400-600", mid: "₹900-1500", premium: "₹2500+" }, 
+    tips: ["Best during Navratri and Uttarayan", "River reflections double the beauty", "Combine with riverfront walk", "Evening cruise available"], 
+    rating: 4.5, 
+    bestTimeToVisit: "October to February, Navratri", 
+    nearbyAttractions: ["Sabarmati Ashram", "Kite Museum", "Adalaj Stepwell"], 
+    facilities: ["Seating", "Food zone", "Boat rides", "Parking"],
+    googleMapsUrl: "https://maps.google.com/?q=Sabarmati+Riverfront+Ahmedabad",
+    food: ["Riverfront food court", "Manek Chowk", "Gujarati thali", "Street food"],
+    shopping: ["Law Garden market", "Handicrafts", "Kite shops"],
+    accommodation: ["Hyatt Regency", "Courtyard Marriott", "Lemon Tree", "Novotel"],
+    placesNearby: [
+      { name: "Sabarmati Ashram", distance: "2 km", type: "Museum" },
+      { name: "Kankaria Lake", distance: "6 km", type: "Lake" },
+      { name: "Adalaj Stepwell", distance: "18 km", type: "Monument" },
+      { name: "ISKCON Temple", distance: "8 km", type: "Temple" }
+    ]
+  },
+
+  // TAMIL NADU - Drone Show
+  { 
+    id: "chennai-marina-drone", 
+    name: "Marina Beach Drone Festival", 
+    location: "Marina Beach, Chennai", 
+    region: "tamil-nadu", 
+    type: "temple", 
+    category: "drone-show",
+    image: mahabalipuramLightShowImg, 
+    tagline: "800+ drones creating Tamil heritage patterns over the Bay of Bengal", 
+    openTime: "6:30 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Shows at 7:00 PM and 8:00 PM", 
+    entryFee: { indian: 150, foreign: 400, children: 75 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 400, 
+    importance: "South India's largest beach drone show featuring 800+ drones. Creates formations of Tamil culture, Bharatanatyam poses, and temple gopurams over the world's second-longest urban beach.", 
+    history: "Launched in 2023 as part of Chennai's cultural renaissance. Shows feature Chola heritage, classical dance forms, and Tamil literature themes.", 
+    architecture: "Open beach venue with temporary grandstand seating", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["Sunset views before show are beautiful", "Beach-side food stalls excellent", "Weekends very crowded", "Come early for parking"], 
+    rating: 4.4, 
+    bestTimeToVisit: "November to February", 
+    nearbyAttractions: ["Kapaleeshwarar Temple", "Fort St. George", "Government Museum"], 
+    facilities: ["Beach seating", "Food stalls", "Parking", "First aid"],
+    googleMapsUrl: "https://maps.google.com/?q=Marina+Beach+Chennai",
+    food: ["Beach sundal", "Filter coffee", "Marina beach snacks", "Murugan Idli Shop"],
+    shopping: ["Beach vendors", "Spencer Plaza", "Express Avenue"],
+    accommodation: ["Taj Coromandel", "ITC Grand Chola", "Vivanta", "GRT Grand"],
+    placesNearby: [
+      { name: "Kapaleeshwarar Temple", distance: "4 km", type: "Temple" },
+      { name: "Fort St. George", distance: "2 km", type: "Fort" },
+      { name: "Valluvar Kottam", distance: "5 km", type: "Monument" },
+      { name: "San Thome Church", distance: "3 km", type: "Church" }
+    ]
+  },
+
+  // ==================== LIGHT SHOWS (Sound & Light) ====================
+
+  // NAGPUR - Light Show
+  { 
+    id: "deekshabhoomi-light-show", 
+    name: "Deekshabhoomi Sound & Light Show", 
+    location: "Nagpur Central", 
+    region: "nagpur", 
+    type: "temple", 
+    category: "light-show",
+    image: deekshabhoomiLightShowImg, 
+    tagline: "Mesmerizing light show narrating Dr. Ambedkar's historic conversion", 
+    openTime: "7:00 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Shows at 7:30 PM (Hindi) and 8:30 PM (English/Marathi)", 
+    entryFee: { indian: 50, foreign: 100, children: 25 }, 
+    vipPassAvailable: false, 
+    importance: "The show narrates the historic October 14, 1956 conversion when Dr. B.R. Ambedkar embraced Buddhism with 380,000 followers - the largest religious conversion in modern history.", 
+    history: "Launched in 2016 on the 60th anniversary of Dhammachakra Pravartan Din. Uses latest projection technology to bring the historic event to life on the white stupa.", 
+    architecture: "Grand white stupa inspired by Sanchi Stupa as projection canvas", 
+    averageExpenses: { budget: "₹200-400", mid: "₹600-900", premium: "₹1500+" }, 
+    tips: ["October 14th show is most special", "Book in advance during Ambedkar Jayanti", "Multiple language shows available", "Photography allowed"], 
+    rating: 4.5, 
+    bestTimeToVisit: "October to March, especially October 14", 
+    nearbyAttractions: ["Dragon Palace Temple", "Nagpur Museum", "Seminary Hills"], 
+    facilities: ["Seating", "Commentary headphones", "Bookshop", "Parking"],
+    googleMapsUrl: "https://maps.google.com/?q=Deekshabhoomi+Nagpur",
+    food: ["Buddhist vegetarian cuisine", "Cafeteria inside", "Local Vidarbha thalis"],
+    shopping: ["Buddhist literature", "Ambedkar memorabilia", "Meditation items"],
+    accommodation: ["Hotel Hardeo", "Pride Hotel", "Tuli Imperial", "Ashok Guest House"],
+    placesNearby: [
+      { name: "Dragon Palace Temple", distance: "15 km", type: "Temple" },
+      { name: "Ambazari Lake", distance: "3 km", type: "Lake" },
+      { name: "Seminary Hills", distance: "2 km", type: "Hill" },
+      { name: "Central Museum", distance: "2 km", type: "Museum" }
+    ]
+  },
+
+  // MAHARASHTRA - Light Shows
+  { 
+    id: "shaniwarwada-light-show", 
+    name: "Shaniwarwada Sound & Light Show", 
+    location: "Pune, Maharashtra", 
+    region: "maharashtra", 
+    type: "fort", 
+    category: "light-show",
+    image: shaniwarwadaLightShowImg, 
+    tagline: "Relive the glory of the Peshwa Empire through spectacular projections", 
+    openTime: "7:00 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Shows at 7:15 PM (Marathi) and 8:15 PM (English)", 
+    entryFee: { indian: 25, foreign: 300, children: 10 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 200, 
+    importance: "The show brings alive the 18th-century Peshwa court, the assassination of Narayanrao, and the dramatic history of the Maratha Empire through spectacular projections on the historic fortification.", 
+    history: "Started in 2002, the show has become Pune's most popular evening attraction. The tragic story of Narayanrao's murder on Amavasya nights adds to the mystique.", 
+    architecture: "18th century Peshwa fortification with distinctive entrance gate", 
+    averageExpenses: { budget: "₹200-400", mid: "₹600-1000", premium: "₹1800+" }, 
+    tips: ["Amavasya (new moon) shows are special", "Weekend shows more crowded", "Combine with Pune darshan", "Haunted stories add thrill"], 
+    rating: 4.6, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Aga Khan Palace", "Sinhagad Fort", "Dagdusheth Ganpati"], 
+    facilities: ["Seating", "Audio headsets", "Parking", "Restrooms"],
+    googleMapsUrl: "https://maps.google.com/?q=Shaniwarwada+Pune",
+    food: ["Bedekar misal", "Chitale bakery", "Kayani bakery", "FC Road food"],
+    shopping: ["Laxmi Road", "MG Road", "Tulsi Baug"],
+    accommodation: ["JW Marriott", "Conrad Pune", "Novotel", "Sheraton Grand"],
+    placesNearby: [
+      { name: "Dagdusheth Ganpati", distance: "0.5 km", type: "Temple" },
+      { name: "Aga Khan Palace", distance: "6 km", type: "Palace" },
+      { name: "Sinhagad Fort", distance: "25 km", type: "Fort" },
+      { name: "Pataleshwar Cave", distance: "2 km", type: "Cave" }
+    ]
+  },
+
+  { 
+    id: "raigad-light-show", 
+    name: "Raigad Fort Sound & Light Show", 
+    location: "Raigad, Maharashtra", 
+    region: "maharashtra", 
+    type: "fort", 
+    category: "light-show",
+    image: raigadLightShowImg, 
+    tagline: "Experience Shivaji Maharaj's coronation through spectacular hilltop projections", 
+    openTime: "7:00 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Single show at 7:30 PM (requires overnight stay)", 
+    entryFee: { indian: 100, foreign: 500, children: 50 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 300, 
+    importance: "The show recreates the historic June 6, 1674 coronation of Chhatrapati Shivaji Maharaj at his capital Raigad. Projections illuminate the fort where the Maratha Empire was born.", 
+    history: "Launched in 2017, the show narrates Shivaji Maharaj's life from guerrilla warrior to crowned king. The ropeway journey at dusk adds to the drama.", 
+    architecture: "17th century Maratha hilltop fort at 820 meters elevation", 
+    averageExpenses: { budget: "₹800-1200", mid: "₹2000-3000", premium: "₹5000+" }, 
+    tips: ["Stay overnight at MTDC resort", "Ropeway closes at sunset - plan accordingly", "Show requires hiking or staying up", "Book ropeway early"], 
+    rating: 4.7, 
+    bestTimeToVisit: "October to February (clear skies)", 
+    nearbyAttractions: ["Lingana Fort", "Pachad village", "Konkan coastline"], 
+    facilities: ["MTDC accommodation", "Restaurant", "Ropeway", "Guides"],
+    googleMapsUrl: "https://maps.google.com/?q=Raigad+Fort+Maharashtra",
+    food: ["MTDC restaurant", "Konkani cuisine", "Sol kadhi", "Fish thali"],
+    shopping: ["Maratha memorabilia", "Local handicrafts"],
+    accommodation: ["MTDC Raigad Resort", "Hotel Raigad", "Camping options"],
+    placesNearby: [
+      { name: "Mahad", distance: "25 km", type: "Town" },
+      { name: "Lingana Fort", distance: "8 km", type: "Fort" },
+      { name: "Pachad Base Village", distance: "0 km", type: "Village" },
+      { name: "Konkan Beach", distance: "50 km", type: "Beach" }
+    ]
+  },
+
+  // KARNATAKA - Light Shows
+  { 
+    id: "hampi-light-show", 
+    name: "Hampi Sound & Light Show", 
+    location: "Hampi, Karnataka", 
+    region: "karnataka", 
+    type: "temple", 
+    category: "light-show",
+    image: hampiLightShowImg, 
+    tagline: "Journey through the Vijayanagara Empire's golden age", 
+    openTime: "6:30 PM", 
+    closeTime: "8:30 PM", 
+    darshanTimings: "Shows at 6:45 PM (Kannada) and 7:45 PM (English)", 
+    entryFee: { indian: 40, foreign: 400, children: 20 }, 
+    vipPassAvailable: false, 
+    importance: "The show narrates the rise and fall of the Vijayanagara Empire (1336-1646 CE), once one of the world's largest and richest cities with 500,000 inhabitants.", 
+    history: "Started in 2010, the show uses the majestic Virupaksha Temple as its backdrop. Narrates stories of Krishnadevaraya, royal court, and the tragic 1565 destruction.", 
+    architecture: "7th century temple complex with iconic gopuram", 
+    averageExpenses: { budget: "₹400-600", mid: "₹1000-1500", premium: "₹2500+" }, 
+    tips: ["Explore ruins during day, show at night", "Stay at Hampi for full experience", "Hippie Island accommodation cheaper", "Sunrise at Matanga Hill recommended"], 
+    rating: 4.5, 
+    bestTimeToVisit: "October to February", 
+    nearbyAttractions: ["Virupaksha Temple", "Vittala Temple", "Matanga Hill", "Tungabhadra River"], 
+    facilities: ["Seating", "Audio guides", "Parking", "Nearby accommodations"],
+    googleMapsUrl: "https://maps.google.com/?q=Hampi+Karnataka",
+    food: ["Mango Tree Restaurant", "Laughing Buddha", "Gopi Corner", "Hampi cafes"],
+    shopping: ["Hampi Bazaar", "Handicrafts", "Stone carvings", "Hippie items"],
+    accommodation: ["Evolve Back", "Heritage Resort", "Guesthouses", "Hippie Island stays"],
+    placesNearby: [
+      { name: "Vittala Temple", distance: "3 km", type: "Temple" },
+      { name: "Matanga Hill", distance: "1 km", type: "Viewpoint" },
+      { name: "Hippie Island", distance: "2 km", type: "Area" },
+      { name: "Tungabhadra Dam", distance: "15 km", type: "Dam" }
+    ]
+  },
+
+  { 
+    id: "gol-gumbaz-light-show", 
+    name: "Gol Gumbaz Sound & Light Show", 
+    location: "Bijapur, Karnataka", 
+    region: "karnataka", 
+    type: "fort", 
+    category: "light-show",
+    image: golGumbazLightShowImg, 
+    tagline: "Experience the Adil Shahi dynasty's grandeur through spectacular dome projections", 
+    openTime: "7:00 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Shows at 7:15 PM (Kannada) and 8:15 PM (English)", 
+    entryFee: { indian: 25, foreign: 300, children: 10 }, 
+    vipPassAvailable: false, 
+    importance: "The show illuminates the second-largest dome in the world (after St. Peter's Basilica) and narrates the story of Muhammad Adil Shah's architectural vision and the famous Whispering Gallery.", 
+    history: "The mausoleum completed in 1656 features a dome spanning 44 meters. The sound and light show, started in 2015, brings alive the Deccan Sultanate era.", 
+    architecture: "17th century Deccan Sultanate architecture with massive dome", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["Visit during day to experience Whispering Gallery", "Sunset photography is stunning", "Combine with Ibrahim Rouza visit", "Less crowded than other shows"], 
+    rating: 4.4, 
+    bestTimeToVisit: "October to March", 
+    nearbyAttractions: ["Ibrahim Rouza", "Bara Kaman", "Malik-e-Maidan cannon"], 
+    facilities: ["Seating", "Audio equipment", "Parking", "Museum"],
+    googleMapsUrl: "https://maps.google.com/?q=Gol+Gumbaz+Bijapur",
+    food: ["North Karnataka cuisine", "Jowar roti", "Bijapur sweets", "Dhabas"],
+    shopping: ["Bijapur handicrafts", "Bidriware", "Local textiles"],
+    accommodation: ["Hotel Mayura", "Hotel Madhuvan", "KSTDC properties"],
+    placesNearby: [
+      { name: "Ibrahim Rouza", distance: "1 km", type: "Mausoleum" },
+      { name: "Bara Kaman", distance: "2 km", type: "Monument" },
+      { name: "Jumma Masjid", distance: "1.5 km", type: "Mosque" },
+      { name: "Bijapur Fort", distance: "0.5 km", type: "Fort" }
+    ]
+  },
+
+  // TAMIL NADU - Light Shows
+  { 
+    id: "mahabalipuram-light-show", 
+    name: "Mahabalipuram Dance & Light Festival", 
+    location: "Mahabalipuram, Tamil Nadu", 
+    region: "tamil-nadu", 
+    type: "temple", 
+    category: "light-show",
+    image: mahabalipuramLightShowImg, 
+    tagline: "Classical dance performances with stunning Shore Temple illuminations", 
+    openTime: "6:00 PM", 
+    closeTime: "9:30 PM", 
+    darshanTimings: "Festival shows 6:30 PM - 9:00 PM (January-February)", 
+    entryFee: { indian: 100, foreign: 500, children: 50 }, 
+    vipPassAvailable: true, 
+    vipPassPrice: 500, 
+    importance: "Annual festival combining Bharatanatyam, Kathakali, and other classical dances with spectacular illumination of the 8th-century Pallava monuments against the Bay of Bengal backdrop.", 
+    history: "The Mamallapuram Dance Festival started in 1965, making it one of India's oldest cultural festivals. The Shore Temple illuminations were added in 2000.", 
+    architecture: "8th century Pallava rock-cut temples and Shore Temple", 
+    averageExpenses: { budget: "₹500-800", mid: "₹1200-2000", premium: "₹3500+" }, 
+    tips: ["January-February dates vary yearly", "Book accommodation in advance", "Combine with Five Rathas visit", "Seafood dinner after show"], 
+    rating: 4.7, 
+    bestTimeToVisit: "January-February (festival), October-March (regular)", 
+    nearbyAttractions: ["Shore Temple", "Five Rathas", "Arjuna's Penance", "Tiger Cave"], 
+    facilities: ["Festival seating", "Food stalls", "Parking", "Cultural exhibitions"],
+    googleMapsUrl: "https://maps.google.com/?q=Mahabalipuram+Shore+Temple",
+    food: ["Fresh seafood", "Moonrakers Restaurant", "Beach shacks", "South Indian meals"],
+    shopping: ["Stone sculptures", "Handicrafts", "Beach market"],
+    accommodation: ["Radisson Blu Resort", "Intercontinental", "GRT Temple Bay", "Beach resorts"],
+    placesNearby: [
+      { name: "Five Rathas", distance: "1 km", type: "Monument" },
+      { name: "Arjuna's Penance", distance: "0.5 km", type: "Sculpture" },
+      { name: "Tiger Cave", distance: "5 km", type: "Cave" },
+      { name: "Crocodile Bank", distance: "14 km", type: "Zoo" }
+    ]
+  },
+
+  { 
+    id: "thanjavur-light-show", 
+    name: "Brihadeeswarar Temple Light & Sound Show", 
+    location: "Thanjavur, Tamil Nadu", 
+    region: "tamil-nadu", 
+    type: "temple", 
+    category: "light-show",
+    image: thanjavurLightShowImg, 
+    tagline: "The great Chola temple comes alive with projections narrating 1000 years of history", 
+    openTime: "6:30 PM", 
+    closeTime: "8:30 PM", 
+    darshanTimings: "Shows at 6:45 PM (Tamil) and 7:45 PM (English)", 
+    entryFee: { indian: 30, foreign: 300, children: 15 }, 
+    vipPassAvailable: false, 
+    importance: "The show narrates the story of Rajaraja Chola I who built this architectural marvel in 1010 CE. The 66-meter vimana (tower) becomes a canvas for spectacular projections.", 
+    history: "UNESCO World Heritage Site since 1987. The light show started in 2010 for the temple's 1000th anniversary, narrating Chola maritime power and cultural achievements.", 
+    architecture: "11th century Dravidian architecture with 80-ton monolithic capstone", 
+    averageExpenses: { budget: "₹300-500", mid: "₹800-1200", premium: "₹2000+" }, 
+    tips: ["Photography allowed during show", "Combine with palace museum visit", "Temple darshan closes at 8 PM", "Pongal festival shows are special"], 
+    rating: 4.6, 
+    bestTimeToVisit: "October to March, Pongal period", 
+    nearbyAttractions: ["Thanjavur Palace", "Saraswathi Mahal Library", "Gangaikonda Cholapuram"], 
+    facilities: ["Seating", "Audio commentary", "Parking", "Nearby restaurants"],
+    googleMapsUrl: "https://maps.google.com/?q=Brihadeeswarar+Temple+Thanjavur",
+    food: ["Thanjavur filter coffee", "Banana chips", "Degree coffee", "Meals at Sathars"],
+    shopping: ["Thanjavur paintings", "Bronze idols", "Silk sarees", "Palm leaf manuscripts"],
+    accommodation: ["Svatma", "Ideal River View", "Hotel Parisutham", "Oriental Towers"],
+    placesNearby: [
+      { name: "Thanjavur Palace", distance: "0.5 km", type: "Palace" },
+      { name: "Saraswathi Mahal Library", distance: "0.5 km", type: "Library" },
+      { name: "Schwartz Church", distance: "1 km", type: "Church" },
+      { name: "Gangaikonda Cholapuram", distance: "70 km", type: "Temple" }
+    ]
+  },
+
+  // GUJARAT - Light Shows
+  { 
+    id: "sabarmati-light-show", 
+    name: "Sabarmati Ashram Sound & Light Show", 
+    location: "Ahmedabad, Gujarat", 
+    region: "gujarat", 
+    type: "temple", 
+    category: "light-show",
+    image: sabarmatiLightShowImg, 
+    tagline: "Relive Gandhi's freedom movement through powerful projections", 
+    openTime: "7:00 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Shows at 7:30 PM (Gujarati/Hindi) and 8:30 PM (English)", 
+    entryFee: { indian: 50, foreign: 200, children: 25 }, 
+    vipPassAvailable: false, 
+    importance: "The show narrates Mahatma Gandhi's 12 years at Sabarmati Ashram (1917-1930), the historic Dandi March, and India's freedom movement through moving projections.", 
+    history: "Started in 2019 on Gandhi's 150th birth anniversary. Uses Hriday Kunj (Gandhi's residence) and ashram buildings as projection surfaces to tell the story of non-violent resistance.", 
+    architecture: "Simple ashram buildings reflecting Gandhian philosophy", 
+    averageExpenses: { budget: "₹200-400", mid: "₹600-1000", premium: "₹1500+" }, 
+    tips: ["Visit museum before show", "October 2nd shows are most popular", "Combine with riverfront walk", "Khadi shop purchases support ashram"], 
+    rating: 4.5, 
+    bestTimeToVisit: "October to March, especially October 2", 
+    nearbyAttractions: ["Sabarmati Riverfront", "Calico Museum", "Adalaj Stepwell"], 
+    facilities: ["Seating", "Museum", "Khadi shop", "Parking"],
+    googleMapsUrl: "https://maps.google.com/?q=Sabarmati+Ashram+Ahmedabad",
+    food: ["Ashram prasad", "Gujarati thali nearby", "Riverfront food court"],
+    shopping: ["Khadi products", "Gandhi literature", "Handicrafts", "Charkha models"],
+    accommodation: ["Hyatt Regency", "Novotel", "Courtyard Marriott", "House of MG"],
+    placesNearby: [
+      { name: "Sabarmati Riverfront", distance: "0.5 km", type: "Promenade" },
+      { name: "Calico Museum", distance: "4 km", type: "Museum" },
+      { name: "Sidi Saiyyed Mosque", distance: "5 km", type: "Mosque" },
+      { name: "Kankaria Lake", distance: "8 km", type: "Lake" }
+    ]
+  },
+
+  { 
+    id: "modhera-sun-temple-light", 
+    name: "Modhera Sun Temple Light Show", 
+    location: "Modhera, Gujarat", 
+    region: "gujarat", 
+    type: "temple", 
+    category: "light-show",
+    image: sabarmatiLightShowImg, 
+    tagline: "Witness the Solanki dynasty's brilliance through temple illuminations", 
+    openTime: "7:00 PM", 
+    closeTime: "9:00 PM", 
+    darshanTimings: "Shows at 7:15 PM and 8:15 PM", 
+    entryFee: { indian: 30, foreign: 300, children: 15 }, 
+    vipPassAvailable: false, 
+    importance: "The show illuminates the 11th-century Sun Temple built by Bhimdev I, showcasing the astronomical precision and 108 carved temple panels that track the sun's movement.", 
+    history: "The temple completed in 1026 CE is designed so that the first rays of equinox sun illuminate the inner sanctum. The light show, started in 2022, narrates Solanki dynasty achievements.", 
+    architecture: "11th century Maru-Gurjara architecture with Kund (stepped tank)", 
+    averageExpenses: { budget: "₹400-600", mid: "₹1000-1500", premium: "₹2500+" }, 
+    tips: ["Visit at equinox for natural sun illumination", "Uttarayan dance festival in January", "Combine with Rani ki Vav", "Photography allowed"], 
+    rating: 4.4, 
+    bestTimeToVisit: "October to March, January (dance festival)", 
+    nearbyAttractions: ["Rani ki Vav", "Patan", "Siddhpur"], 
+    facilities: ["Seating", "Audio guides", "Parking", "Museum"],
+    googleMapsUrl: "https://maps.google.com/?q=Sun+Temple+Modhera",
+    food: ["Local Gujarati food", "Thepla", "Fafda-Jalebi", "Dhaba food"],
+    shopping: ["Patola sarees (Patan)", "Handicrafts", "Wooden toys"],
+    accommodation: ["Patan hotels", "Mehsana hotels", "Heritage stays"],
+    placesNearby: [
+      { name: "Rani ki Vav", distance: "25 km", type: "Stepwell" },
+      { name: "Patan", distance: "25 km", type: "Town" },
+      { name: "Siddhpur", distance: "20 km", type: "Town" },
+      { name: "Taranga Hills", distance: "40 km", type: "Pilgrimage" }
     ]
   },
 ];
