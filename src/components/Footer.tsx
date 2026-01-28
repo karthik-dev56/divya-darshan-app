@@ -92,7 +92,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm text-white/70">
               <li>📧 info@divyadarshan.com</li>
-              <li>📞 +91 98765 43210</li>
+              <li>📞 +91 9xxx-xxx-xxx</li>
               <li>📍 Mumbai, Maharashtra, India</li>
             </ul>
           </div>
@@ -102,7 +102,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/50 text-sm">
-              © 2024 Divya Darshan. All rights reserved.
+              © 2026 Divya Darshan. All rights reserved.
             </p>
             <p className="text-white/50 text-sm flex items-center gap-1">
               Made with <Heart className="w-4 h-4 text-temple-red fill-temple-red" /> for devotees

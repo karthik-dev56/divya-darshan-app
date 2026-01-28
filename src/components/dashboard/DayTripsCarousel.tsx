@@ -289,7 +289,7 @@ const DayTripsCarousel = () => {
             size="icon"
             onClick={() => scroll('left')}
             disabled={!canScrollLeft}
-            className="border-white/20 text-white/70 hover:bg-white/10 disabled:opacity-30"
+            className="border-white/20 hover:bg-white/10 disabled:opacity-30"
           >
             <ChevronLeft className="w-4 h-4" />
           </Button>
@@ -298,7 +298,7 @@ const DayTripsCarousel = () => {
             size="icon"
             onClick={() => scroll('right')}
             disabled={!canScrollRight}
-            className="border-white/20 text-white/70 hover:bg-white/10 disabled:opacity-30"
+            className="border-white/20 hover:bg-white/10 disabled:opacity-30"
           >
             <ChevronRight className="w-4 h-4" />
           </Button>

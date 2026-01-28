@@ -194,7 +194,7 @@ const Dashboard = () => {
               variant={filter === "all" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("all")}
-              className={filter === "all" ? "bg-temple-gold text-temple-dark hover:bg-temple-gold/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+              className={filter === "all" ? "bg-temple-gold text-temple-dark hover:bg-temple-gold/90" : "border-yellow-600/30 text-white/80 hover:bg-yellow-600/10 hover:text-yellow-600 transition-colors duration-200 bg-transparent"}
             >
               All ({allSites.length})
             </Button>
@@ -202,7 +202,7 @@ const Dashboard = () => {
               variant={filter === "temple" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("temple")}
-              className={filter === "temple" ? "bg-temple-saffron text-white hover:bg-temple-saffron/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+              className={filter === "temple" ? "bg-temple-saffron text-white hover:bg-temple-saffron/90" : "border-yellow-600/30 text-white/80 hover:bg-yellow-600/10 hover:text-yellow-600 transition-colors duration-200 bg-transparent"}
             >
               <Building2 className="w-4 h-4 mr-1" />
               Temples ({templeCount})
@@ -211,7 +211,7 @@ const Dashboard = () => {
               variant={filter === "fort" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("fort")}
-              className={filter === "fort" ? "bg-amber-600 text-white hover:bg-amber-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+              className={filter === "fort" ? "bg-amber-600 text-white hover:bg-amber-600/90" : "border-yellow-600/30 text-white/80 hover:bg-yellow-600/10 hover:text-yellow-600 transition-colors duration-200 bg-transparent"}
             >
               <Landmark className="w-4 h-4 mr-1" />
               Forts ({fortCount})
@@ -220,7 +220,7 @@ const Dashboard = () => {
               variant={filter === "must-visit" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("must-visit")}
-              className={filter === "must-visit" ? "bg-green-600 text-white hover:bg-green-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+              className={filter === "must-visit" ? "bg-green-600 text-white hover:bg-green-600/90" : "border-yellow-600/30 text-white/80 hover:bg-yellow-600/10 hover:text-yellow-600 transition-colors duration-200 bg-transparent"}
             >
               <Sparkles className="w-4 h-4 mr-1" />
               Must Visit ({mustVisitCount})
@@ -229,7 +229,7 @@ const Dashboard = () => {
               variant={filter === "hidden-gem" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("hidden-gem")}
-              className={filter === "hidden-gem" ? "bg-purple-600 text-white hover:bg-purple-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+              className={filter === "hidden-gem" ? "bg-purple-600 text-white hover:bg-purple-600/90" : "border-yellow-600/30 text-white/80 hover:bg-yellow-600/10 hover:text-yellow-600 transition-colors duration-200 bg-transparent"}
             >
               <Eye className="w-4 h-4 mr-1" />
               Hidden Gems ({hiddenGemCount})
@@ -238,7 +238,7 @@ const Dashboard = () => {
               variant={filter === "drone-show" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("drone-show")}
-              className={filter === "drone-show" ? "bg-cyan-600 text-white hover:bg-cyan-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+              className={filter === "drone-show" ? "bg-cyan-600 text-white hover:bg-cyan-600/90" : "border-yellow-600/30 text-white/80 hover:bg-yellow-600/10 hover:text-yellow-600 transition-colors duration-200 bg-transparent"}
             >
               <Plane className="w-4 h-4 mr-1" />
               Drone Shows ({droneShowCount})
@@ -247,7 +247,7 @@ const Dashboard = () => {
               variant={filter === "light-show" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("light-show")}
-              className={filter === "light-show" ? "bg-yellow-600 text-white hover:bg-yellow-600/90" : "border-white/20 text-white/70 hover:bg-white/10"}
+              className={filter === "light-show" ? "bg-yellow-600 text-white hover:bg-yellow-600/90" : "border-yellow-600/30 text-white/80 hover:bg-yellow-600/10 hover:text-yellow-600 transition-colors duration-200 bg-transparent"}
             >
               <Zap className="w-4 h-4 mr-1" />
               Light Shows ({lightShowCount})
