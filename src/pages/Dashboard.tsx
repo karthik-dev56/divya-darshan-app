@@ -6,7 +6,7 @@ import { useSavedSites } from "@/hooks/useSavedSites";
 import UserMenu from "@/components/UserMenu";
 import RegionTabs from "@/components/dashboard/RegionTabs";
 import HeritageSiteCard from "@/components/dashboard/HeritageSiteCard";
-import DayTripsSection from "@/components/dashboard/DayTripsSection";
+import DayTripsCarousel from "@/components/dashboard/DayTripsCarousel";
 import { regions, getSitesByRegion, isSiteOpen } from "@/data/heritageSitesData";
 import { Building2, Landmark, Filter, Sparkles, Eye, Zap, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -178,8 +178,8 @@ const Dashboard = () => {
           />
         </motion.div>
 
-        {/* Day Trips Section */}
-        <DayTripsSection region={regions.find((r) => r.id === activeRegion)?.name} />
+        {/* Featured Day Trips Carousel */}
+        <DayTripsCarousel />
 
         {/* Filter Tabs */}
         <motion.div 
