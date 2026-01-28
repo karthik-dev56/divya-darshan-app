@@ -57,50 +57,43 @@ const DayTripCard = ({ trip, onClick }: DayTripCardProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ y: -3, scale: 1.02 }}
+      transition={{ duration: 0.2 }}
+      className="h-full"
     >
       <Card 
-        className="overflow-hidden cursor-pointer border border-border/50 bg-card hover:border-temple-gold/50 transition-all duration-300 group"
+        className="overflow-hidden cursor-pointer border-0 bg-gradient-to-br from-card to-muted/30 hover:shadow-lg hover:shadow-temple-gold/10 transition-all duration-300 group h-full flex flex-col"
         onClick={onClick}
       >
-        <div className="relative h-40 overflow-hidden">
+        <div className="relative h-32 overflow-hidden">
           <img
             src={getImageSrc()}
             alt={trip.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          <Badge className={`absolute top-3 left-3 ${getDifficultyColor(trip.difficulty)}`}>
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+          <Badge className={`absolute top-2 right-2 text-xs ${getDifficultyColor(trip.difficulty)}`}>
             {trip.difficulty}
-          </Badge>
-          <Badge className="absolute top-3 right-3 bg-temple-gold/90 text-temple-dark">
-            {trip.region}
           </Badge>
         </div>
         
-        <CardContent className="p-4">
-          <h3 className="font-serif text-lg text-foreground mb-1 group-hover:text-temple-gold transition-colors">
+        <CardContent className="p-3 flex-1 flex flex-col">
+          <h3 className="font-serif text-base text-foreground mb-1 group-hover:text-temple-gold transition-colors line-clamp-1">
             {trip.name}
           </h3>
-          <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{trip.tagline}</p>
+          <p className="text-xs text-muted-foreground mb-2 line-clamp-1 flex-1">{trip.tagline}</p>
           
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex items-center justify-between text-xs pt-2 border-t border-border/30">
             <div className="flex items-center gap-1 text-muted-foreground">
-              <Clock className="w-4 h-4" />
+              <Clock className="w-3 h-3" />
               <span>{trip.totalDuration}</span>
             </div>
-            <div className="flex items-center gap-1 text-temple-gold">
-              <IndianRupee className="w-4 h-4" />
+            <div className="flex items-center gap-0.5 text-temple-gold font-medium">
+              <IndianRupee className="w-3 h-3" />
               <span>{trip.estimatedCost.budget}</span>
             </div>
-          </div>
-          
-          <div className="flex items-center gap-1 mt-3 text-sm text-temple-gold">
-            <span>View itinerary</span>
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </CardContent>
       </Card>
@@ -302,18 +295,14 @@ const DayTripsSection = ({ region }: DayTripsSectionProps) => {
   }
 
   return (
-    <div className="mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h2 className="text-xl font-serif text-foreground flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-temple-gold" />
-            One Day Trips
-          </h2>
-          <p className="text-sm text-muted-foreground">Curated full-day heritage experiences</p>
-        </div>
+    <div className="mb-6">
+      <div className="flex items-center gap-2 mb-3">
+        <div className="w-1 h-5 bg-temple-gold rounded-full" />
+        <h2 className="text-base font-serif text-foreground">Day Trips</h2>
+        <span className="text-xs text-muted-foreground">• {filteredTrips.length} curated</span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <AnimatePresence>
           {filteredTrips.map((trip) => (
             <DayTripCard 
